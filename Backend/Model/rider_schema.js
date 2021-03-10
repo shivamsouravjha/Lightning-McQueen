@@ -1,0 +1,15 @@
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
+const schema =  mongoose.Schema;
+const rider_schema = new schema({
+    rider_name: {type :String,required:true },
+    email: {type :String,required:true,unique:true },
+    phone: {type :String,required:true,unique:true,minlength:10 },
+    password: {type :String,required:true,minlength:8 },
+    account: {type: String,required:true,minlength:12,maxLength:12},
+    location: {lat:{type :Number,required:true },lng:{type :Number,required:true }},
+   /// profile_Pic: {type :String,required:true },
+});
+
+rider_schema.plugin(uniqueValidator);
+module.exports = mongoose.model('Rider_Provider',rider_schema);
