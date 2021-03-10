@@ -6,9 +6,9 @@ const placesControllers = require('../controllers/places-controllers');
 
 const router = express.Router();
 
-router.get('/:pid', placesControllers.getPlaceById);
+router.get('/:did', placesControllers.getPlaceById); /////did = driver id
 
-router.get('/user/:uid', placesControllers.getPlacesByUserId);
+router.get('/user/:uid', placesControllers.getPlacesByUserId); //////uid= user id
 
 router.post(
   '/',

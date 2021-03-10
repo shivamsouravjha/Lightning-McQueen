@@ -1,0 +1,8 @@
+{
+    "rider_name":"Shivam",
+    "email":"ssj@gmail.com",
+    "phone":"1234567890",
+    "password":"ssj12345567890",
+    "account":"012345678901",
+    "location":{"lat":"12","lng":"123"}
+}
