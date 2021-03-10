@@ -3,14 +3,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const rider_router = require('./Routes/rider_router');
-//const memes = require('./ROUTERS/memes');
+const driver_router = require('./ROUTEs/driver_router');
 const Erur = require('./MODEL/Error');
 
 const app = express();
 app.use(bodyParser.json());
 
 app.use('/api/rider', rider_router); // => /api/places...
-//app.use('/api/memes', memes);
+app.use('/api/driver', driver_router);
 
 app.use((req, res, next) => {
     const error = new Erur('Could not find this route.', 404);

@@ -2,40 +2,28 @@ const express = require('express');
 const { check } = require('express-validator');
 //const fileUpload = require('../middleware/file-upload');
 
-const placesControllers = require('../controllers/places-controllers');
+const driver_controller = require('../controller/driver_controller');
 
 const router = express.Router();
 
-router.get('/:did', placesControllers.getPlaceById); /////did = driver id
-
-router.get('/user/:uid', placesControllers.getPlacesByUserId); //////uid= user id
 
 router.post(
-  '/',
-  fileUpload.single('image'),
+  '/signup',
   [
-    check('title')
+    check('driver_name')
       .not()
       .isEmpty(),
-    check('description').isLength({ min: 5 }),
-    check('address')
-      .not()
-      .isEmpty()
+      check('email')
+      .normalizeEmail()
+      .isEmail(),
+      check('phone').isLength({ min: 10 ,max:10}),    
+      check('password').isLength({ min: 8}), 
+      check('car_number').isLength({ min: 10 ,max:10}),
+      check('account').isLength({ min: 12 ,max:12})
   ],
-  placesControllers.createPlace
+  driver_controller.signup
 );
 
-router.patch(
-  '/:pid',
-  [
-    check('title')
-      .not()
-      .isEmpty(),
-    check('description').isLength({ min: 5 })
-  ],
-  placesControllers.updatePlace
-);
 
-router.delete('/:pid', placesControllers.deletePlace);
 
 module.exports = router;
