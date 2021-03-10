@@ -14,4 +14,4 @@ const driver_schema = new schema({
 });
 
 driver_schema.plugin(uniqueValidator);
-module.exports = mongoose.model('User',driver_schema);
+module.exports = mongoose.model('Driver',driver_schema);
