@@ -17,6 +17,9 @@ const signup  = async (req,res,next)=>{
     const {driver_name,email,phone,password,car_number,account,location}= req.body;
     let existing_driver_email; 
     let existing_driver_phone; 
+    let existing_car_number;
+    console.log(email);
+ 
     try{
         existing_driver_email = await Driver_Schema.findOne({email:email});
         existing_driver_phone = await Driver_Schema.findOne({phone:phone});

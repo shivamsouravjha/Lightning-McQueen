@@ -26,7 +26,8 @@ app.use((req, res, next) => {
   });
   mongoose
   .connect(
-    `mongodb+srv://shivam:123456shivam@cluster0.dm1xw.mongodb.net/mcqueen?retryWrites=true&w=majority`,{ useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true }
+    `mongodb://shivam:shivam123@cluster0-shard-00-00.dm1xw.mongodb.net:27017,cluster0-shard-00-01.dm1xw.mongodb.net:27017,cluster0-shard-00-02.dm1xw.mongodb.net:27017/mcqueen?ssl=true&replicaSet=atlas-x6eag6-shard-0&authSource=admin&retryWrites=true&w=majority`,
+    { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true }
   )
   .then(() => {
     app.listen(process.env.PORT || 5000);
