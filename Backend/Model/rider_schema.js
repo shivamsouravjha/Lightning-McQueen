@@ -12,4 +12,3 @@ const rider_schema = new schema({
 });
 
 rider_schema.plugin(uniqueValidator);
-module.exports = mongoose.model('Rider_Provider',rider_schema);
