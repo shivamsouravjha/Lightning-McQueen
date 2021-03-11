@@ -8,20 +8,8 @@ const router = express.Router();
 
 
 router.post(
-  '/signup',
-  [
-    check('driver_name')
-      .not()
-      .isEmpty(),
-      check('email')
-      .normalizeEmail()
-      .isEmail(),
-      check('phone').isLength({ min: 10 ,max:10}),    
-      check('password').isLength({ min: 8}), 
-      check('car_number').isLength({ min: 10 ,max:10}),
-      check('account').isLength({ min: 12 ,max:12})
-  ],
- // booking_controller.signup
+  '/avail/:did',          ////driver id =did
+  booking_controller.availability
 );
 router.post(
   '/login',

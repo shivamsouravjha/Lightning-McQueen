@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use('/api/rider', rider_router); // => /api/places...
 app.use('/api/driver', driver_router);
-app.use('/api/booking/', driver_router);
+app.use('/api/booking/', booking_routers);
 
 app.use((req, res, next) => {
     const error = new Erur('Could not find this route.', 404);
