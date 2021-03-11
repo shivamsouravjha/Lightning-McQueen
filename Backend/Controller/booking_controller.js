@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 
 const Erur = require('../Model/Error');
 const Availability_Schema = require('../Model/availability');
+const Driver_Schema = require('../model/driver_schema');
+const Rider_Schema = require('../model/rider_schema');
 
 
 const availability  = async (req,res,next)=>{
@@ -34,12 +36,35 @@ const availability  = async (req,res,next)=>{
          return next(error);
        }
  
-      console.log(avail_exist);
-      res.status(201).json({message: 'Edited in!'});
+      res.status(201).json({message: 'Updated'});
 
 };
-const login  = async (req,res,next)=>{
- 
+const update_location  = async (req,res,next)=>{
+    const _id = req.params.did;
+    let location_update;
+    try{
+        location_update = await Driver_Schema.findOne({_id:_id});
+      }catch(err){
+        const error = new Erur(
+          'Loggin in failed, please try again later.',
+          500
+        );
+        return next(error);
+      }
+      const {location}= req.body;
+      console.log(location);
+      location_update.location=location;
+      try {
+        await location_update.save();
+       } catch (err) {
+         const error = new Erur(
+           'Updation up failed, please try again later.',
+           500
+         );
+         return next(error);
+       }
+       res.status(201).json({message: 'Location Updated'});
+
 };
 exports.availability = availability;
-exports.login = login;
+exports.update_location = update_location;

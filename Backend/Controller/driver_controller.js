@@ -76,7 +76,7 @@ const signup  = async (req,res,next)=>{
         return next(error);
       }
  
-      res.status(201).json({ memer: New_driver.toObject({ getters: true }) });
+      res.status(201).json({ driver: New_driver.toObject({ getters: true }) });
 };
 const login  = async (req,res,next)=>{
   const {email,password}=req.body;
