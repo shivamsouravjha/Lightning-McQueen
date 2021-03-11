@@ -64,7 +64,6 @@ const signup  = async (req,res,next)=>{
     const driver_id = created_driver._id;
     const availability= 'false';
     const New_avail = new Availability_Schema({driver_id,availability});
-    console.log({driver_id,availability});
 
     try {
        await New_avail.save();

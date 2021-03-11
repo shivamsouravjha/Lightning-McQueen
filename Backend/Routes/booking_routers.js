@@ -12,10 +12,21 @@ router.post(
   booking_controller.availability
 );
 router.post(
-  '/location/:did',
-  booking_controller.update_location
-);
-
+    '/location/:did',
+    booking_controller.update_location
+  );
+  router.post(
+    '/:uid',          ////uid =user ID
+    booking_controller.booking
+  );
+  router.get(
+    '/historyuid/:uid',          ////uid =user ID
+    booking_controller.history_uid
+  );router.get(
+    '/historydid/:did',          ////uid =user ID
+    booking_controller.history_did
+  );
+    
 
 
 module.exports = router;
