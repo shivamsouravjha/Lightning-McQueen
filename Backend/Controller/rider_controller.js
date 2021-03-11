@@ -54,8 +54,26 @@ const signup  = async (req,res,next)=>{
     
       res.status(201).json({ memer: New_Rider.toObject({ getters: true }) });
 };
-const login  = async(req,res,next)=>{
-
+const login  = async (req,res,next)=>{
+  const {email,password}=req.body;
+  let rider_existed;
+  try{
+    rider_existed = await Rider_Schema.findOne({email:email});
+  }catch(err){
+    const error = new Erur(
+      'Loggin in failed, please try again later.',
+      500
+    );
+    return next(error);
+  }
+  if(!rider_existed || rider_existed.password != password){
+    const error = new Erur(
+      'Invalid credentials, could not log you in.',
+      401
+    );
+    return next(error);
+  }
+  res.status(201).json({message: 'Logged in!'});
 };
 exports.signup = signup;
 exports.login = login;

@@ -23,6 +23,16 @@ router.post(
   ],
   driver_controller.signup
 );
+router.post(
+  '/login',
+  [
+      check('email')
+      .normalizeEmail()
+      .isEmail(),
+      check('password').isLength({ min: 8}), 
+  ],
+  driver_controller.login
+);
 
 
 

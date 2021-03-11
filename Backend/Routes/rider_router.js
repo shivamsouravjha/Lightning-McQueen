@@ -21,5 +21,15 @@ router.post(
   ],
   rider_controller.signup
 );
+router.post(
+  '/login',
+  [
+      check('email')
+      .normalizeEmail()
+      .isEmail(),
+      check('password').isLength({ min: 8}), 
+  ],
+  rider_controller.login
+);
 
 module.exports = router;
