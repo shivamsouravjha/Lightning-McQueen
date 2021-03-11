@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const rider_router = require('./Routes/rider_router');
 const driver_router = require('./ROUTEs/driver_router');
+const booking_routers = require('./ROUTEs/booking_routers');
 const Erur = require('./MODEL/Error');
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 
 app.use('/api/rider', rider_router); // => /api/places...
 app.use('/api/driver', driver_router);
+app.use('/api/booking/', driver_router);
 
 app.use((req, res, next) => {
     const error = new Erur('Could not find this route.', 404);

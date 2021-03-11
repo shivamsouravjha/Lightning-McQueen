@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Erur = require('../Model/Error');
 const Driver_Schema = require('../model/driver_schema');
 const Rider_Schema = require('../model/rider_schema');
-
+const Availability_Schema = require('../Model/availability');
 
 const signup  = async (req,res,next)=>{
     const errors = validationResult(req);
@@ -18,7 +18,6 @@ const signup  = async (req,res,next)=>{
     let existing_driver_email; 
     let existing_driver_phone; 
     let existing_car_number;
-    console.log(email);
  
     try{
         existing_driver_email = await Driver_Schema.findOne({email:email});
@@ -52,8 +51,9 @@ const signup  = async (req,res,next)=>{
         return next(error);
       }
     const New_driver = new Driver_Schema({driver_name,email,phone,password,car_number,account,location});
+    let created_driver;
     try {
-        await New_driver.save();
+      created_driver= await New_driver.save();
       } catch (err) {
         const error = new Erur(
           'Signing up failed, please try again later.',
@@ -61,14 +61,31 @@ const signup  = async (req,res,next)=>{
         );
         return next(error);
       }
-    
+    const driver_id = created_driver._id;
+    const availability= 'false';
+    const New_avail = new Availability_Schema({driver_id,availability});
+    console.log({driver_id,availability});
+
+    try {
+       await New_avail.save();
+      } catch (err) {
+        const error = new Erur(
+          'Avail up failed, please try again later.',
+          500
+        );
+        return next(error);
+      }
+ 
       res.status(201).json({ memer: New_driver.toObject({ getters: true }) });
 };
 const login  = async (req,res,next)=>{
   const {email,password}=req.body;
   let driver_existed;
+  let avail_exist;
   try{
     driver_existed = await Driver_Schema.findOne({email:email});
+    const driver_id = driver_existed._id;
+    avail_exist = await Availability_Schema.findOne({driver_id:driver_id});
   }catch(err){
     const error = new Erur(
       'Loggin in failed, please try again later.',
@@ -83,6 +100,20 @@ const login  = async (req,res,next)=>{
     );
     return next(error);
   }
+  console.log(avail_exist);
+  const availability= 'true';
+  avail_exist.availability=availability;
+
+    try {
+       await avail_exist.save();
+      } catch (err) {
+        const error = new Erur(
+          'Avail up failed, please try again later.',
+          500
+        );
+        return next(error);
+      }
+
   res.status(201).json({message: 'Logged in!'});
 };
 exports.signup = signup;
