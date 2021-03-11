@@ -22,9 +22,15 @@ router.post(
   router.get(
     '/historyuid/:uid',          ////uid =user ID
     booking_controller.history_uid
-  );router.get(
+  );
+  router.get(
     '/historydid/:did',          ////uid =user ID
     booking_controller.history_did
+  );
+    
+  router.post(
+    '/end/:uid',          ////uid =user ID
+    booking_controller.end
   );
     
 

@@ -53,7 +53,6 @@ const update_location  = async (req,res,next)=>{
         return next(error);
       }
       const {location}= req.body;
-      console.log(location);
       location_update.location=location;
       try {
         await location_update.save();
@@ -145,9 +144,36 @@ const history_did = async(req,res,next) =>{
 
   res.json({ History: history.toObject({ getters: true }) });
 };
+const end =  async(req,res,next) =>{
+    const rider_id = req.params.uid;
+    let end_ride;
+    try {
+        end_ride = await Booking_Schema.findOne({rider_id:rider_id});///////////////removed populate
+      } catch (err) {
+        const error = new Erur(
+          'Fetching places failed, please try again later.',
+          500
+        );
+        return next(error);
+      }
+   ///   console.log(end_ride);
+     end_ride.status =false;
+      try {
+        await end_ride.save();
+       } catch (err) {
+         const error = new Erur(
+           'Updation up failed, please try again later.',
+           500
+         );
+         return next(error);
+       }
+       res.status(201).json({message: 'Ride Ended'});
 
+
+};
 exports.booking = booking;
 exports.availability = availability;
 exports.update_location = update_location;
 exports.history_uid = history_uid;
 exports.history_did = history_did;
+exports.end = end;
