@@ -149,6 +149,27 @@ const history_did = async(req,res,next) =>{
   
   res.json({ logbook: history});
 };
+const avail_cabs = async(req,res,next) =>{
+  const availability = true;
+  let history;
+  try {
+  history = await Availability_Schema.find({availability:availability});///////////////removed populate
+} catch (err) {
+  const error = new Erur(
+    'Fetching places failed, please try again later.',
+    500
+  );
+  return next(error);
+}
+
+if (!history ) {
+  return next(
+    new Erur('Driver is introvert', 404)
+  );
+}
+
+res.json({ logbook: history});
+};
 const end =  async(req,res,next) =>{
     const rider_id = req.params.uid;
     console.log(rider_id);
@@ -183,3 +204,4 @@ exports.update_location = update_location;
 exports.history_uid = history_uid;
 exports.history_did = history_did;
 exports.end = end;
+exports.avail_cabs = avail_cabs;

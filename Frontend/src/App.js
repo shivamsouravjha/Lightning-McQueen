@@ -20,6 +20,7 @@ import History_Driver from './driver/history_did';
 import Avail from './driver/avaiibility';
 import End from './rider/end';
 import History_Rider from './rider/history_uid';
+import Avail_cabs from './rider/bookride';
 
 const App= ()=> {
   return(
@@ -67,6 +68,9 @@ const App= ()=> {
     </Route>
     <Route path="/rider/:uid/end" exact>
       <End />
+    </Route>
+    <Route path="/rider/:uid/availcabs" exact>
+      <Avail_cabs />
     </Route>
     <Route path="/rider/:uid/update_location" exact>
       <Location />

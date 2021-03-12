@@ -10,7 +10,7 @@ const  Main_page_user = ()=> {
    
    <center> <ul className="header">
       <li> <Link to={`/rider/${uid}/end`}> <button className="admin_div" >end</button></Link></li>
-      <li> <Link to={`/rider/${uid}/booking`}> <button className="admin_div" >booking</button></Link></li>
+      <li> <Link to={`/rider/${uid}/availcabs`}> <button className="admin_div" >booking</button></Link></li>
       <li> <Link to={`/rider/${uid}/historyuid`}> <button className="admin_div" >history_uid</button></Link></li>
 
     </ul></center>

@@ -27,6 +27,10 @@ router.post(
     '/historydid/:did',          ////uid =user ID
     booking_controller.history_did
   );
+  router.get(
+    '/availcabs',          ////uid =user ID
+    booking_controller.avail_cabs
+  );
     
   router.post(
     '/end/:uid',          ////uid =user ID
