@@ -12,8 +12,10 @@ const  Rider_login = ()=>{
                 body:JSON.stringify(body)
             })
             const datainjson = await response.json();
-            
-           console.log(datainjson);
+            const did = datainjson.rider._id;
+
+
+           window.location =`/rider/${did}`;
         }catch(err){
             console.log('Error')
         }
