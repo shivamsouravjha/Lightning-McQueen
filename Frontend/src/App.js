@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Initialpage from './common/initial';
 import Driverini from './driver/driver_log_sig';
-import Riderini from './common/initial';
+import Riderini from './rider/rider_log_sig';
 import Driver from './driver/drivercommand';
 import Rider from './rider/ridercommand';
 import Rider_login from './rider/riderlogin';
@@ -28,6 +28,9 @@ const App= ()=> {
      </Route>
      <Route path="/driverini" exact>
       <Driverini />
+     </Route>
+     <Route path="/riderini" exact>
+      <Riderini />
      </Route>
       
     <Route path="/rider/login" exact>
