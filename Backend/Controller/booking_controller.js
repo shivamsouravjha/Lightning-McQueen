@@ -10,6 +10,8 @@ const Booking_Schema = require('../model/booking');
 
 const availability  = async (req,res,next)=>{
     const driver_id = req.params.did;
+    console.log(driver_id);
+
     let avail_exist;
     try{
         avail_exist = await Availability_Schema.findOne({driver_id:driver_id});
@@ -65,7 +67,6 @@ const update_location  = async (req,res,next)=>{
 
          return next(error);
        }
-       console.log("fgd");
        res.status(201).json({message: 'Location Updated'});
 
 };

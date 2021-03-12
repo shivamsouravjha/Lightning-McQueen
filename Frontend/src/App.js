@@ -13,6 +13,7 @@ import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
 import Success from './common/sucess';
 import Location from './driver/update_location';
+import Avail from './driver/avaiibility';
 
 const App= ()=> {
   return(
@@ -43,7 +44,7 @@ const App= ()=> {
       </Route>
     
     <Route path="/driver/:did/availability" exact>
-      <Location />
+      <Avail />
     </Route>
     <Route path="/driver/:did/update_location" exact>
       <Location />
