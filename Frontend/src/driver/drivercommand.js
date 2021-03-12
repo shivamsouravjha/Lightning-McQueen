@@ -1,6 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-const  main_page = ()=> {
+import { Link, useParams } from 'react-router-dom';
+const  Driver_command = ()=> {
+    const did = useParams().did;
+
+
   return(
 
   <div>
@@ -8,8 +11,9 @@ const  main_page = ()=> {
     <h1 className="pageheader"> DEFINE YOURSELF</h1>
    
    <center> <ul className="header">
-      <li> <Link to={`/driver/signup`}> <button className="admin_div" >Admin</button></Link></li>
-      <li> <Link to={`/driver/login`}> <button className="user_div" >User</button></Link></li>
+      <li> <Link to={`/driver/${did}/availability`}> <button className="admin_div" >availability</button></Link></li>
+      <li> <Link to={`/driver/${did}/update_location`}> <button className="admin_div" >update_location</button></Link></li>
+      <li> <Link to={`/driver/:${did}/history_did`}> <button className="admin_div" >history_did</button></Link></li>
     </ul></center>
     <div className="content">
        
@@ -18,4 +22,4 @@ const  main_page = ()=> {
   );
 }
 
-export default main_page;
+export default Driver_command;

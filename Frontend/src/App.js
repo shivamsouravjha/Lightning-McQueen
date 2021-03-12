@@ -12,6 +12,7 @@ import Rider_login from './rider/riderlogin';
 import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
 import Success from './common/sucess';
+import Location from './driver/update_location';
 
 const App= ()=> {
   return(
@@ -19,10 +20,10 @@ const App= ()=> {
     <Switch>
     <Route path="/initial" exact>
       <Initialpage />
-    </Route>
-    <Route path="/driver" exact>
-      <Driver />
-      </Route><Route path="/rider" exact>
+     
+       </Route>
+    
+      <Route path="/rider" exact>
       <Rider />
     </Route>
     <Route path="/rider/login" exact>
@@ -37,7 +38,19 @@ const App= ()=> {
     <Route path="/driver/login" exact>
       <Driver_login />
     </Route>
+    <Route path="/driver/:did" exact>
+      <Driver />
+      </Route>
     
+    <Route path="/driver/:did/availability" exact>
+      <Location />
+    </Route>
+    <Route path="/driver/:did/update_location" exact>
+      <Location />
+    </Route>
+    <Route path="/driver/:did/history_did" exact>
+      <Driver_Signup />
+    </Route>
     <Route path="/success" exact>
       <Success />
     </Route>

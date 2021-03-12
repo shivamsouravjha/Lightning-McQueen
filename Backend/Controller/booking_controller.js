@@ -61,8 +61,11 @@ const update_location  = async (req,res,next)=>{
            'Updation up failed, please try again later.',
            500
          );
+         console.log(error);
+
          return next(error);
        }
+       console.log("fgd");
        res.status(201).json({message: 'Location Updated'});
 
 };
