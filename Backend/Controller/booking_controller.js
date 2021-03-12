@@ -150,6 +150,7 @@ const history_did = async(req,res,next) =>{
 };
 const end =  async(req,res,next) =>{
     const rider_id = req.params.uid;
+    console.log(rider_id);
     let end_ride;
     try {
         end_ride = await Booking_Schema.findOne({rider_id:rider_id});///////////////removed populate

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-const  Avail = ()=>{
-    const did = useParams().did;
+const  End = ()=>{
+    const uid = useParams().uid;
 
-    console.log(did);
+    console.log(uid);
     const availability = async e =>{
         console.log("did");
 
@@ -12,7 +12,7 @@ const  Avail = ()=>{
         try{
            
             const body = {};
-            const response = await fetch(`/booking/avail/${did}`,{
+            const response = await fetch(`/booking/end/${uid}`,{
                 method:"POST",headers:{"Content-Type":"application/json"}
             })
             const datainjson = await response.json();
@@ -42,4 +42,4 @@ const  Avail = ()=>{
   
 };
  
-export default Avail;
+export default End;

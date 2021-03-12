@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Link, useParams } from 'react-router-dom';
-const  main_page = ()=> {
-    const userid = useParams.uid();
+const  Main_page_user = ()=> {
+    const uid = useParams().uid;
   return(
 
   <div>
@@ -9,8 +9,10 @@ const  main_page = ()=> {
     <h1 className="pageheader"> DEFINE YOURSELF</h1>
    
    <center> <ul className="header">
-      <li> <Link to={`/rider/signup`}> <button className="admin_div" >Admin</button></Link></li>
-      <li> <Link to={`/rider/login`}> <button className="user_div" >User+ {userid} </button></Link></li>
+      <li> <Link to={`/rider/${uid}/end`}> <button className="admin_div" >end</button></Link></li>
+      <li> <Link to={`/rider/${uid}/booking`}> <button className="admin_div" >booking</button></Link></li>
+      <li> <Link to={`/rider/${uid}/history_uid`}> <button className="admin_div" >history_did</button></Link></li>
+
     </ul></center>
     <div className="content">
        
@@ -19,4 +21,4 @@ const  main_page = ()=> {
   );
 }
 
-export default main_page;
+export default Main_page_user;
