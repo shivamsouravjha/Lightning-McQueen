@@ -19,6 +19,7 @@ import Location from './driver/update_location';
 import History_Driver from './driver/history_did';
 import Avail from './driver/avaiibility';
 import End from './rider/end';
+import History_Rider from './rider/history_uid';
 
 const App= ()=> {
   return(
@@ -61,7 +62,7 @@ const App= ()=> {
     <Route path="/driver/:did/update_location" exact>
       <Location />
     </Route>
-    <Route path="/driver/:did/history_did" exact>
+    <Route path="/driver/:did/historydid" exact>
       <History_Driver />
     </Route>
     <Route path="/rider/:uid/end" exact>
@@ -70,8 +71,8 @@ const App= ()=> {
     <Route path="/rider/:uid/update_location" exact>
       <Location />
     </Route>
-    <Route path="/rider/:uid/history_did" exact>
-      <Driver_Signup />
+    <Route path="/rider/:uid/historyuid" exact>
+      <History_Rider />
     </Route>
     <Route path="/success" exact>
       <Success />

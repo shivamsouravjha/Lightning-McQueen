@@ -1,12 +1,12 @@
 import React,{useEffect,useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import History_list from './history_list';
-const Driver_History = ()=>{
-    const did = useParams().did;
+const Rider_History = ()=>{
+    const uid = useParams().uid;
     const [loadedattende,setloadedattende] = useState('');
     const get_events = async ()=>{
         try{
-            const response = await fetch(`/booking/historydid/${did}`,{
+            const response = await fetch(`/booking/historyuid/${uid}`,{
                 method:"GET",headers:{"Content-Type":"application/json"}
             })   
             const jsonData = await response.json()
@@ -27,4 +27,4 @@ const Driver_History = ()=>{
 
     ;
 };
-export default Driver_History;
+export default Rider_History;

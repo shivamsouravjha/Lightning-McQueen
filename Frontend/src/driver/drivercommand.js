@@ -13,7 +13,7 @@ const  Driver_command = ()=> {
    <center> <ul className="header">
       <li> <Link to={`/driver/${did}/availability`}> <button className="admin_div" >availability</button></Link></li>
       <li> <Link to={`/driver/${did}/update_location`}> <button className="admin_div" >update_location</button></Link></li>
-      <li> <Link to={`/driver/${did}/history_did`}> <button className="admin_div" >history_did</button></Link></li>
+      <li> <Link to={`/driver/${did}/historydid`}> <button className="admin_div" >history_did</button></Link></li>
     </ul></center>
     <div className="content">
        

@@ -108,7 +108,7 @@ const history_uid = async(req,res,next) =>{
     const rider_id = req.params.uid;
     let history;
   try {
-    history = await Rider_Schema.findById(rider_id);///////////////removed populate
+    history = await Booking_Schema.find({rider_id:rider_id});///////////////removed populate
   } catch (err) {
     const error = new Erur(
       'Fetching places failed, please try again later.',
@@ -123,7 +123,7 @@ const history_uid = async(req,res,next) =>{
     );
   }
 
-  res.json({ history: history });
+  res.json({ logbook: history});
 };
 
 
