@@ -11,6 +11,7 @@ import Rider from './rider/ridercommand';
 import Rider_login from './rider/riderlogin';
 import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
+import Success from './common/sucess';
 
 const App= ()=> {
   return(
@@ -31,13 +32,14 @@ const App= ()=> {
       <Rider />
     </Route>
     <Route path="/driver/signup" exact>
-      <Rider />
+      <Driver_Signup />
     </Route>
     <Route path="/driver/login" exact>
       <Driver_login />
     </Route>
-    <Route path="/driver/:did" exact>
-      <Driver_Signup />
+    
+    <Route path="/success" exact>
+      <Success />
     </Route>
    
 
