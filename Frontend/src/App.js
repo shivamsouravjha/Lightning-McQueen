@@ -16,6 +16,7 @@ import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
 import Success from './common/sucess';
 import Location from './driver/update_location';
+import History_Driver from './driver/history_did';
 import Avail from './driver/avaiibility';
 import End from './rider/end';
 
@@ -61,7 +62,7 @@ const App= ()=> {
       <Location />
     </Route>
     <Route path="/driver/:did/history_did" exact>
-      <Driver_Signup />
+      <History_Driver />
     </Route>
     <Route path="/rider/:uid/end" exact>
       <End />

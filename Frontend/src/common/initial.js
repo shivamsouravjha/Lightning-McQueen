@@ -9,8 +9,8 @@ const  main_page = ()=> {
     <h1 className="pageheader"> DEFINE YOURSELF</h1>
    
    <center> <ul className="header">
-      <li> <Link to={`/riderini`}> <button className="admin_div" >Rider</button></Link></li>
-      <li> <Link to={`/driverini`}> <button className="user_div" >Driver</button></Link></li>
+      <li> <Link to={`/riderini`}> <button className="rider_div" >Rider</button></Link></li>
+      <li> <Link to={`/driverini`}> <button className="driver_div" >Driver</button></Link></li>
     </ul></center>
     <div className="content">
        

@@ -123,15 +123,15 @@ const history_uid = async(req,res,next) =>{
     );
   }
 
-  res.json({ History: history.toObject({ getters: true }) });
+  res.json({ history: history });
 };
 
 
 const history_did = async(req,res,next) =>{
     const driver_id = req.params.did;
     let history;
-  try {
-    history = await Driver_Schema.findById(driver_id);///////////////removed populate
+    try {
+    history = await Booking_Schema.find({driver_id:driver_id});///////////////removed populate
   } catch (err) {
     const error = new Erur(
       'Fetching places failed, please try again later.',
@@ -139,14 +139,15 @@ const history_did = async(req,res,next) =>{
     );
     return next(error);
   }
+  console.log(history);
 
   if (!history ) {
     return next(
       new Erur('Driver is introvert', 404)
     );
   }
-
-  res.json({ History: history.toObject({ getters: true }) });
+  
+  res.json({ logbook: history});
 };
 const end =  async(req,res,next) =>{
     const rider_id = req.params.uid;
