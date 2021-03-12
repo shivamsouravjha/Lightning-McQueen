@@ -73,7 +73,11 @@ const login  = async (req,res,next)=>{
     );
     return next(error);
   }
-  res.status(201).json({message: 'Logged in!'});
+  console.log(rider_existed);
+  res.json({
+    message: 'Logged in!',
+    rider: rider_existed.toObject({ getters: true })
+  });
 };
 exports.signup = signup;
 exports.login = login;

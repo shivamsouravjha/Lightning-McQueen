@@ -8,6 +8,9 @@ import {
 import Initialpage from './common/initial';
 import Driver from './driver/drivercommand';
 import Rider from './rider/ridercommand';
+import Rider_login from './rider/riderlogin';
+import Driver_login from './driver/driverlogin';
+import Driver_Signup from './driver/newdriver';
 
 const App= ()=> {
   return(
@@ -22,7 +25,7 @@ const App= ()=> {
       <Rider />
     </Route>
     <Route path="/rider/login" exact>
-      <Rider />
+      <Rider_login />
     </Route>
     <Route path="/rider/signup" exact>
       <Rider />
@@ -31,7 +34,10 @@ const App= ()=> {
       <Rider />
     </Route>
     <Route path="/driver/login" exact>
-      <Rider />
+      <Driver_login />
+    </Route>
+    <Route path="/driver/:did" exact>
+      <Driver_Signup />
     </Route>
    
 

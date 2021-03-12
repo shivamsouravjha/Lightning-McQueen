@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
-const  Admin_login = ()=>{
-    const [admin_password,setPassword]=useState('');
-    const [admin_name,setadmin_name]=useState('');
+const  Rider_login = ()=>{
+    const [password,setPassword]=useState('');
+    const [email,set_email]=useState('');
     const onSubmitform = async e =>{
         e.preventDefault();
         try{
-            const body={admin_password,admin_name};
+            const body={email,password};
 
-            const response = await fetch("/admin/driver/login",{
+            const response = await fetch("/rider/login",{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
             const datainjson = await response.json();
-            const numtocheck = datainjson[0].count.toString();
-            if(numtocheck.localeCompare("0")){
-                window.location="/admincommand"
-            }
-           
+            
+           console.log(datainjson);
         }catch(err){
             console.log('Error')
         }
@@ -30,10 +27,10 @@ const  Admin_login = ()=>{
   <center>
 	<form  action="/initial" id="admin_form"  name="admin_form" onSubmit={onSubmitform}>
     <label for="name" className="label">Enter your name! </label><br/>
-				<input type="text" name="name" className="input" value={admin_name} 
-                onChange={e =>setadmin_name(e.target.value)} required />  <br/><br/>
+				<input type="text" name="name" className="input" value={email} 
+                onChange={e =>set_email(e.target.value)} required />  <br/><br/>
 			<label for="password" className="label">Enter the password! </label><br/>
-				<input type="password" name="password" className="input" value={admin_password} 
+				<input type="password" name="password" className="input" value={password} 
                 onChange={e =>setPassword(e.target.value)} required />  <br/><br/>
 
   		
@@ -49,4 +46,4 @@ const  Admin_login = ()=>{
   
 };
  
-export default Admin_login;
+export default Rider_login;

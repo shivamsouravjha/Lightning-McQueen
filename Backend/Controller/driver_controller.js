@@ -99,7 +99,6 @@ const login  = async (req,res,next)=>{
     );
     return next(error);
   }
-  console.log(avail_exist);
   const availability= 'true';
   avail_exist.availability=availability;
 
@@ -113,7 +112,9 @@ const login  = async (req,res,next)=>{
         return next(error);
       }
 
-  res.status(201).json({message: 'Logged in!'});
-};
+      res.json({
+        message: 'Logged in!',
+        driver: driver_existed.toObject({ getters: true })
+      });};
 exports.signup = signup;
 exports.login = login;
