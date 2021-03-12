@@ -6,6 +6,8 @@ import {
   Switch
 } from 'react-router-dom';
 import Initialpage from './common/initial';
+import Driverini from './driver/driver_log_sig';
+import Riderini from './common/initial';
 import Driver from './driver/drivercommand';
 import Rider from './rider/ridercommand';
 import Rider_login from './rider/riderlogin';
@@ -23,9 +25,10 @@ const App= ()=> {
     <Switch>
     <Route path="/initial" exact>
       <Initialpage />
-     
-       </Route>
-    
+     </Route>
+     <Route path="/driverini" exact>
+      <Driverini />
+     </Route>
       
     <Route path="/rider/login" exact>
       <Rider_login />
