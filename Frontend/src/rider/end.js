@@ -11,7 +11,6 @@ const  End = ()=>{
         e.preventDefault();
         try{
            
-            const body = {};
             const response = await fetch(`/booking/end/${uid}`,{
                 method:"POST",headers:{"Content-Type":"application/json"}
             })

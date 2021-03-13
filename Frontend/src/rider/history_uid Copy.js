@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
-import History_list from './history_list';
+import History_list from './history_list copy';
 const Rider_History = ()=>{
     const uid = useParams().uid;
     const [loadedattende,setloadedattende] = useState('');
@@ -10,7 +10,7 @@ const Rider_History = ()=>{
                 method:"GET",headers:{"Content-Type":"application/json"}
             })   
             const jsonData = await response.json()
-            console.log(jsonData.logbook);
+            console.log(jsonData);
 
             setloadedattende(jsonData.logbook);
         }catch(err)

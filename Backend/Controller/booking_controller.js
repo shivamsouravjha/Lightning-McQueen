@@ -74,8 +74,8 @@ const booking = async(req,res,next) =>{
     const rider_id = req.params.uid;
     let rider_data;
     let driver_data;
-    const { driver_id,destination}=req.body;
-
+    const {driver_id,destination}=req.body;
+  console.log(driver_id);
     try{
         driver_data = await Driver_Schema.findOne({_id:driver_id});
         rider_data = await Rider_Schema.findOne({_id:rider_id});
@@ -86,6 +86,8 @@ const booking = async(req,res,next) =>{
           );
           return next(error);
     } 
+    console.log(driver_data);
+
     const initial_rider_location = rider_data.location;
     const initial_driver_location = driver_data.location;
     const status = true;
