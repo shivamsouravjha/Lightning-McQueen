@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const uniquevalidator = require('mongoose-unique-validator');
 const schema=  mongoose.Schema;
 const bookingscema = new schema({
     rider_id: {type :mongoose.Types.ObjectId,required:true,ref:'Rider_Provider' },
@@ -10,5 +9,4 @@ const bookingscema = new schema({
     status:{type:Boolean,required:true}  
 });
 
-bookingscema.plugin(uniquevalidator);
 module.exports =mongoose.model('Booking',bookingscema);

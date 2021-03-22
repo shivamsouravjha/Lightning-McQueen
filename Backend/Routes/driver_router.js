@@ -2,7 +2,7 @@ const express = require('express');
 const { check } = require('express-validator');
 //const fileUpload = require('../middleware/file-upload');
 
-const driver_controller = require('../controller/driver_controller');
+const driver_controller = require('../Controller/driver_controller');
 
 const router = express.Router();
 

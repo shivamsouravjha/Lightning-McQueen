@@ -3,8 +3,8 @@ const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
 const Erur = require('../Model/Error');
-const Driver_Schema = require('../model/driver_schema');
-const Rider_Schema = require('../model/rider_schema');
+const Driver_Schema = require('../Model/driver_schema');
+const Rider_Schema = require('../Model/rider_schema');
 const Availability_Schema = require('../Model/availability');
 
 const signup  = async (req,res,next)=>{

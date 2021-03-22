@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
 const schema =  mongoose.Schema;
 const rider_schema = new schema({
     rider_name: {type :String,required:true },
@@ -11,5 +10,4 @@ const rider_schema = new schema({
    /// profile_Pic: {type :String,required:true },
 });
 
-rider_schema.plugin(uniqueValidator);
 module.exports = mongoose.model('Rider_provider',rider_schema);

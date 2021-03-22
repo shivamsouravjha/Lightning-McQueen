@@ -6,7 +6,7 @@ const Driver_History = ()=>{
     const [loadedattende,setloadedattende] = useState('');
     const get_events = async ()=>{
         try{
-            const response = await fetch(`/booking/historydid/${did}`,{
+            const response = await fetch(`https://taxibackendf.herokuapp.com/api/booking/historydid/${did}`,{
                 method:"GET",headers:{"Content-Type":"application/json"}
             })   
             const jsonData = await response.json()

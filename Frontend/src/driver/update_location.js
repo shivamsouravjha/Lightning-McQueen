@@ -13,7 +13,7 @@ const  Location = ()=>{
             const location = {lng,lat};
             const body={location};
 
-            const response = await fetch(`/booking/location/${did}`,{
+            const response = await fetch(`https://taxibackendf.herokuapp.com/api/booking/location/${did}`,{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })

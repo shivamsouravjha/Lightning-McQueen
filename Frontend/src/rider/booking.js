@@ -15,7 +15,7 @@ const  Rider_Signup = ()=>{
             const destination ={lat,lng};
             const body={driver_id,destination};
 
-            const response = await fetch(`/booking/${uid}`,{
+            const response = await fetch(`https://taxibackendf.herokuapp.com/api/booking/${uid}`,{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })

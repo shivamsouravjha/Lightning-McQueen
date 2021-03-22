@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
 const schema=  mongoose.Schema;
 const driver_schema = new schema({
     driver_name: {type :String,required:true },
@@ -13,5 +12,4 @@ const driver_schema = new schema({
    /// profile_Pic: {type :String,required:true },
 });
 
-driver_schema.plugin(uniqueValidator);
 module.exports = mongoose.model('Driver',driver_schema);

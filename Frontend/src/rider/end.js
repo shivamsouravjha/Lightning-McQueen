@@ -11,7 +11,7 @@ const  End = ()=>{
         e.preventDefault();
         try{
            
-            const response = await fetch(`/booking/end/${uid}`,{
+            const response = await fetch(`https://taxibackendf.herokuapp.com/api/booking/end/${uid}`,{
                 method:"POST",headers:{"Content-Type":"application/json"}
             })
             const datainjson = await response.json();

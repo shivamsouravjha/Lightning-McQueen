@@ -2,7 +2,7 @@ const express = require('express');
 const { check } = require('express-validator');
 //const fileUpload = require('../middleware/file-upload');
 
-const booking_controller = require('../controller/booking_controller');
+const booking_controller = require('../Controller/booking_controller');
 
 const router = express.Router();
 

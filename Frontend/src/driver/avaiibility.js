@@ -12,7 +12,7 @@ const  Avail = ()=>{
         try{
            
             const body = {};
-            const response = await fetch(`/booking/avail/${did}`,{
+            const response = await fetch(`https://taxibackendf.herokuapp.com/api/booking/avail/${did}`,{
                 method:"POST",headers:{"Content-Type":"application/json"}
             })
             const datainjson = await response.json();

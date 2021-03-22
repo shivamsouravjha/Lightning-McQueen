@@ -3,11 +3,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const rider_router = require('./Routes/rider_router');
-const driver_router = require('./ROUTEs/driver_router');
-const booking_routers = require('./ROUTEs/booking_routers');
-const Erur = require('./MODEL/Error');
+const driver_router = require('./Routes/driver_router');
+const booking_routers = require('./Routes/booking_routers');
+const Erur = require('./Model/Error');
+const cors = require('cors')
 
 const app = express();
+app.use(cors());
+
 app.use(bodyParser.json());
 
 app.use('/api/rider', rider_router); // => /api/places...
@@ -28,7 +31,7 @@ app.use((req, res, next) => {
   });
   mongoose
   .connect(
-    `mongodb://shivam:shivam123@cluster0-shard-00-00.dm1xw.mongodb.net:27017,cluster0-shard-00-01.dm1xw.mongodb.net:27017,cluster0-shard-00-02.dm1xw.mongodb.net:27017/mcqueen?ssl=true&replicaSet=atlas-x6eag6-shard-0&authSource=admin&retryWrites=true&w=majority`,
+    `mongodb://${process.env.name}:${process.env.password}@cluster0-shard-00-00.dm1xw.mongodb.net:27017,cluster0-shard-00-01.dm1xw.mongodb.net:27017,cluster0-shard-00-02.dm1xw.mongodb.net:27017/${process.env.db}?ssl=true&replicaSet=atlas-x6eag6-shard-0&authSource=admin&retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true }
   )
   .then(() => {

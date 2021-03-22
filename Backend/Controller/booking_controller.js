@@ -1,11 +1,10 @@
-const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
 const Erur = require('../Model/Error');
 const Availability_Schema = require('../Model/availability');
-const Driver_Schema = require('../model/driver_schema');
-const Rider_Schema = require('../model/rider_schema');
-const Booking_Schema = require('../model/booking');
+const Driver_Schema = require('../Model/driver_schema');
+const Rider_Schema = require('../Model/rider_schema');
+const Booking_Schema = require('../Model/booking');
 
 
 const availability  = async (req,res,next)=>{
