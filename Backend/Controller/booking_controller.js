@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-const Erur = require('../Model/Error');
-const Availability_Schema = require('../Model/availability');
-const Driver_Schema = require('../Model/driver_schema');
-const Rider_Schema = require('../Model/rider_schema');
-const Booking_Schema = require('../Model/booking');
+const Erur = require('../Service_Model/Error');
+const Availability_Schema = require('../Service_Model/availability');
+const Rider_Schema = require('../Service_Model/masonry');
+const Booking_Schema = require('../Service_Model/logging');
 
 
 const availability  = async (req,res,next)=>{

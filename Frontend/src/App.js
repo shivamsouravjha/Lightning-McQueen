@@ -7,21 +7,21 @@ import {
 } from 'react-router-dom';
 import Initialpage from './common/initial';
 import Driverini from './driver/driver_log_sig';
-import Riderini from './rider/rider_log_sig';
+import Riderini from './service_partner/rider_log_sig';
 import Driver from './driver/drivercommand';
-import Rider from './rider/ridercommand';
-import Rider_login from './rider/riderlogin';
-import Rider_Signup from './driver/newdriver';
+import Rider from './service_partner/ridercommand';
+import Rider_login from './service_partner/service_login';
+import Rider_Signup from './service_partner/new_service';
 import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
 import Success from './common/sucess';
 import Location from './driver/update_location';
 import History_Driver from './driver/history_did';
 import Avail from './driver/avaiibility';
-import End from './rider/end';
-import History_Rider from './rider/history_uid';
-import Avail_cabs from './rider/history_uid Copy';
-import Booking from './rider/booking';
+import End from './service_partner/end';
+import History_Rider from './service_partner/history_uid';
+import Avail_cabs from './service_partner/history_uid Copy';
+import Booking from './service_partner/booking';
 
 const App= ()=> {
   return(

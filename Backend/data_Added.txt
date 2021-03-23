@@ -7,6 +7,24 @@
     "location":{"lat":"12","lng":"123"}
 }
 {
+    "name":"Shivam",
+    "email":"sshj@gmail.com",
+    "phone":"1234567890",
+    "password":"ssj12345567890",
+    "aadhar":"123456789012",
+    "location":"Patna",
+    "sex":"Male",
+    "zipcode":"800014",
+    "dob":"25-10-2001",
+    "skill":"masonry"
+
+}
+{
+    "entry":"shgshhj@gmail.com",
+    "password":"ssj12345567890"
+
+}
+{
     "driver_name":"Shivam",
     "email":"ssj@gmail.com",
     "phone":"1234567890",
@@ -15,5 +33,7 @@
     "location":{"lat":"12","lng":"123"},
     "car_number":"AB12CD1234"
 }
+http://localhost:5000/api/service/signup
 http://localhost:5000/api/driver/signup
 http://localhost:5000/api/rider/signup
+http://localhost:5000/api/service/login

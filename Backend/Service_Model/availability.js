@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const schema=  mongoose.Schema;
 const availability_schema = new schema({
-    driver_id: {type :mongoose.Types.ObjectId,required:true,ref:'Driver' },
+    service_id: {type :mongoose.Types.ObjectId,required:true,ref:'Loggin_schema' },
     availability:{type:Boolean,required:true}  
 });
 

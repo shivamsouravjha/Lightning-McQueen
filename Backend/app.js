@@ -2,10 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const rider_router = require('./Routes/rider_router');
-const driver_router = require('./Routes/driver_router');
-const booking_routers = require('./Routes/booking_routers');
-const Erur = require('./Model/Error');
+const service_router = require('./ZRoutes/service_router');
+const driver_router = require('./ZRoutes/driver_router');
+const booking_routers = require('./ZRoutes/booking_routers');
+const Erur = require('./Service_Model/Error');
 const cors = require('cors')
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use('/api/rider', rider_router); // => /api/places...
+app.use('/api/service', service_router); // => /api/places...
 app.use('/api/driver', driver_router);
 app.use('/api/booking/', booking_routers);
 
