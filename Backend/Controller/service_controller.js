@@ -27,16 +27,16 @@ const signup  = async (req,res,next)=>{
 
     const {zipcode,name, location,dob,phone,sex,password,aadhar,email,skill}= req.body;
 
-  //  console.log(name);
-  //  console.log(email);
-  //  console.log(phone);
-  //  console.log(password);
-  ////  console.log(aadhar);
-  ///  console.log(location);
-  ////  console.log(dob);
-  ///  console.log(sex);
-  ///  console.log(skill);
-  ///  console.log(zipcode);
+   // console.log(typeof(name));
+   // console.log(typeof(email));
+  //  console.log(typeof(phone));
+ // console.log(typeof(password));
+  //  console.log(typeof(aadhar));
+ //   console.log(typeof(location));
+   /// console.log(typeof(dob));
+   // //console.log(typeof(sex));
+    ///console.log(typeof(skill));
+    ///console.log(typeof(zipcode));
     let existing_customer_email; 
     let existing_customer_phone; 
     try{
@@ -75,21 +75,22 @@ const signup  = async (req,res,next)=>{
           );
           return next(error);
         }
-        service_id= service_data._id;
-      let New_service_partner_DB;
-      if(skill=="masonry")New_service_partner_DB= new Masonry_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill}); 
-      else if(skill=="building_material")New_service_partner_DB= new Building_material_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="demolition")New_service_partner_DB= new Demolition_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="wallcovering")New_service_partner_DB= new Wallcovering_Schema({service_id,zipcode,name, ocation,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="survey")New_service_partner_DB= new Survey_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="rennovation")New_service_partner_DB= new Rennovation_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="hvac")New_service_partner_DB= new HVAC_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="framing")New_service_partner_DB= new Framing_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="highway")New_service_partner_DB= new Highway_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="plumbing")New_service_partner_DB= new Plumbing_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="p_tools")New_service_partner_DB= new P_tools_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-      else if(skill=="roofing")New_service_partner_DB= new Roofing_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
-     console.log(New_service_partner_DB);
+        service_id=service_data._id;
+        let New_service_partner_DB;
+      if(skill==="masonry")New_service_partner_DB= new Masonry_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill}); 
+      else if(skill==="building_material")New_service_partner_DB= new Building_material_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="demolition")New_service_partner_DB= new Demolition_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="wallcovering")New_service_partner_DB= new Wallcovering_Schema({service_id,zipcode,name, location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="survey")New_service_partner_DB= new Survey_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="rennovation")New_service_partner_DB= new Rennovation_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="hvac")New_service_partner_DB= new HVAC_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="framing")New_service_partner_DB= new Framing_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="highway")New_service_partner_DB= new Highway_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="plumbing")New_service_partner_DB= new Plumbing_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="p_tools")New_service_partner_DB= new P_tools_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      else if(skill==="roofing")New_service_partner_DB= new Roofing_Schema({service_id,zipcode,name,location,dob,phone,sex,password,aadhar,email,skill});
+      console.log(New_service_partner_DB);
+      console.log("hgj");
       try {
           await New_service_partner_DB.save();
         } catch (err) {
