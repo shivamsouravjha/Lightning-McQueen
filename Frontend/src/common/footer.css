@@ -4,13 +4,11 @@
     box-sizing: border-box;
     background:#22282e;
     height: auto;
-    width: 100vw;
+    width: 100%;
     font-family: "Open Sans";
     padding-top:40px;
-    color:#667a88;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    color:#fff;
+    
     } 
     .left{
         position: absolute;
@@ -23,15 +21,6 @@
             right: 150px;
             width: 200px;
             height: 120px;
-    }
-    .center{
-      width: 200px;
-      height: 120px;
-      }
-      
-      .center-end{
-        justify-content: center;
-        color:rgb(241, 240, 240);
       }
     .end{
       background:#14181c;
@@ -107,3 +96,5 @@
     font-size: large;
     margin: 0px 20px;
   }
+
+  
