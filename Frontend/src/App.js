@@ -22,10 +22,11 @@ import End from './service_partner/end';
 import History_Rider from './service_partner/history_uid';
 import Avail_cabs from './service_partner/history_uid Copy';
 import Booking from './service_partner/booking';
-
+import Footer from './common/footer';
 const App= ()=> {
   return(
   <Router>
+    <main>
     <Switch>
     <Route path="/initial" exact>
       <Initialpage />
@@ -89,7 +90,13 @@ const App= ()=> {
 
     <Redirect to="/initial"/>
     </Switch>
-  </Router>
+    </main>
+    <Footer />
+
+    </Router>
+
+
+  
   );
 }
 
