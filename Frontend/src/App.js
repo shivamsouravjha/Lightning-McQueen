@@ -22,10 +22,13 @@ import End from './service_partner/end';
 import History_Rider from './service_partner/history_uid';
 import Avail_cabs from './service_partner/history_uid Copy';
 import Booking from './service_partner/booking';
-import Footer from './common/footer';
+import ViewFooter from './common/ViewFooter';
+import MainNavigation from './common/MainNavigation';
+
 const App= ()=> {
   return(
   <Router>
+    <MainNavigation />
     <main>
     <Switch>
     <Route path="/initial" exact>
@@ -91,12 +94,13 @@ const App= ()=> {
     <Redirect to="/initial"/>
     </Switch>
     </main>
-    <Footer />
+    <ViewFooter />
 
-    </Router>
+   
 
 
   
+  </Router>
   );
 }
 
