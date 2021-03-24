@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 const  Rider_Signup = ()=>{
-    const [zipcode,setzipcode]=useState();
-    const [name,set_name]=useState();
-    const [location,set_location]=useState();
-    const [dob,set_dob]=useState();
-    const [phone,set_phone]=useState();
-    const [sex,set_sex]=useState('');
+    const [zipcode,setzipcode]=useState('');
+    const [name,set_name]=useState('');
+    const [location,set_location]=useState('');
+    const [dob,set_dob]=useState('');
+    const [phone,set_phone]=useState('');
+    const [sex,set_sex]=useState();
     const [password,set_password]=useState();
     const [aadhar,set_aadhar]=useState();
     const [email,set_email]=useState();
-    const [skill,set_skill]=useState('');
+    const [skill,set_skill]=useState();
     const onSubmitform = async e =>{
         e.preventDefault();
         try{
-               console.log(name);
-    console.log(email);
-    console.log(phone);
-    console.log(password);
-    console.log(aadhar);
-    console.log(location);
-     console.log(dob);
-    console.log(sex);
-    console.log(skill);
-    console.log(zipcode);
+           ///    console.log(name);
+   // console.log(email);
+   /// console.log(phone);
+   // console.log(password);
+  ///  console.log(aadhar);
+  //  console.log(location);
+  ///  console.log(dob);
+   /// console.log(sex);
+   /// console.log(skill);
+   /// console.log(zipcode);
             const body={zipcode,name, location,dob,phone,sex,password,aadhar,email,skill};
 
             const response = await fetch("https://taxibackendf.herokuapp.com/api/service/signup",{
@@ -88,18 +88,17 @@ const  Rider_Signup = ()=>{
                 title="Enter a Aadhar" required />  <br/><br/>
 
                 
-            <label for="DOB" className="label">Enter D.O.B </label><br/>
-				<input type="date" name="DOB" className="input" value={dob} 
+            <label for="D.O.B" className="label">Enter D.O.B </label><br/>
+				<input type="date" name="D.O.B" className="input" value={dob} 
                 onChange={e =>set_dob(e.target.value)} required />  <br/><br/>
 
 
 
 			<label for="Sex" className="label">Enter Sex </label><br/>
-                <select name="Sex" id="Sex" value={sex} onChange={e =>set_sex(e.target.value)}>
-                    <optgroup label="Gender" >
-                    <option  ></option>
-                    <option  >Male</option>
-                            <option >Female</option>
+                <select name="Sex" id="sex"  onChange={e =>set_sex(e.target.value)} required>
+                    <optgroup label="Gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                     </optgroup>
     
                 </select>
@@ -107,22 +106,20 @@ const  Rider_Signup = ()=>{
                 <br/><br/>
 
                 <label for="Skill" className="label">Enter Skill </label><br/>
-                <select name="Skill" value={skill} onChange={e =>set_skill(e.target.value)}>
+                <select name="Skill" id="sex"   onChange={e =>set_skill(e.target.value)} required>
                 <optgroup label="Choose Skill">
-                <option ></option>
-
-                            <option >masonry</option>
-                            <option >building_material</option>
-                            <option>demolition</option>
-                            <option >wallcovering</option>
-                            <option >survey</option>
-                            <option >rennovation</option>
-                            <option >hvac</option>
-                            <option >framing</option>
-                            <option >highway</option>
-                            <option >plumbing</option>
-                            <option >p_tools</option>
-                            <option >roofing</option>
+                            <option value="masonry">Masonry</option>
+                            <option value="building_material">Building_material</option>
+                            <option value="demolition">Demolition</option>
+                            <option value="wallcovering">Wallcovering</option>
+                            <option value="survey">Survey</option>
+                            <option value="rennovation">Rennovation</option>
+                            <option value="hvac">hvac</option>
+                            <option value="framing">framing</option>
+                            <option value="highway">Highway</option>
+                            <option value="plumbing">plumbing</option>
+                            <option value="p_tools">p_tools</option>
+                            <option value="roofing">roofing</option>
 
                     </optgroup>
     
@@ -131,7 +128,7 @@ const  Rider_Signup = ()=>{
                  <label for="Place" className="label">Enter Place </label><br/>
                  <input type="text" name="Place" className="input" value={location} 
                  onChange={e =>set_location(e.target.value)}
-                 placeholder="Place" 
+                 placeholder="Skill" 
                  
                   required />  <br/><br/>
 
