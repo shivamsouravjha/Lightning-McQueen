@@ -15,9 +15,7 @@
     "location":"Patna",
     "sex":"Male",
     "zipcode":"800014",
-    "dob":"25-10-2001",
-    "skill":"masonry"
-
+    "dob":"25-10-2001"
 }
 {
     "entry":"shgshhj@gmail.com",
