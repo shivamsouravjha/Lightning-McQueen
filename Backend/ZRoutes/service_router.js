@@ -1,6 +1,6 @@
 const express = require('express');
 const { check } = require('express-validator');
-//const fileUpload = require('../middleware/file-upload');
+const fileUpload = require('../Middleware/file-upload');
 
 const service_controller_stage1 = require('../Controller/service_controller_stage1');
 const service_controller_stage2 = require('../Controller/service_controller_stage2');
@@ -29,9 +29,15 @@ router.post(
   ],
   service_controller_stage1.login
 );
+
+router.post(
+  '/verification/:sid', fileUpload.fields([{
+               name: 'aadhar', maxCount: 1},{
+                name: 'profile_pic', maxCount: 1}])  ,                 ///sid = srviceman id
+                service_controller_stage2.verify
+);
 router.post(
   '/:sid',                    ///sid = srviceman id
   service_controller_stage1.address
 );
-
 module.exports = router;

@@ -1,3 +1,6 @@
+const fs = require('fs');
+var path = require('path');
+
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 const Erur = require('../Service_Model_stage2/Error');
@@ -5,7 +8,6 @@ const Logging_Schema = require('../service_model_stage1.js/logging');
 const Service_Schema = require('../service_model_stage1.js/service');
 const Verifivation_Schema = require('../service_model_stage1.js/verifivation');
 const Address_Schema = require('../service_model_stage1.js/address');
-
 
 
 const signup  = async (req,res,next)=>{
@@ -85,6 +87,10 @@ const signup  = async (req,res,next)=>{
 
       res.status(201).json({ memer: New_service_partner_DB.toObject({ getters: true }) });
 };
+
+
+
+
 const login  = async (req,res,next)=>{
   const {entry,password}=req.body;
   let rider_existed;
@@ -112,6 +118,14 @@ const login  = async (req,res,next)=>{
   res.json({message: 'Logged in!',
     rider: rider_existed.toObject({ getters: true })});
 };
+
+
+
+
+
+
+
+
 const address  = async (req,res,next)=>{
   
  
@@ -119,7 +133,6 @@ const address  = async (req,res,next)=>{
   const {village,post, ps,block,pnumber}= req.body;
   
   
-    console.log('works');
       let New_service_partner_address;
       New_service_partner_address= new Address_Schema({service_id,village,post, ps,block,pnumber}); 
    
@@ -135,6 +148,23 @@ const address  = async (req,res,next)=>{
           }
 
     res.status(201).json({ memer: New_service_partner_address.toObject({ getters: true }) });
+};
+
+const step2_verification  = async (req,res,next)=>{
+  const service_id = req.params.sid;
+
+  ///console.log(req.files.profile_pic[0]);
+ /// const images = new Img_model({image:aadhar_image})
+    try{
+      //images.save();
+    }catch (err) {
+      const error = new HttpError(
+        'Creating place failed, please try again.',
+        500
+      );
+      return next(error);
+    }
+   
 };
 exports.signup = signup;
 exports.login = login;

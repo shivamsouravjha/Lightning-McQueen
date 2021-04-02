@@ -1,4 +1,5 @@
-///const fs=require('fs');
+var fs = require('fs');
+var path = require('path');
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
