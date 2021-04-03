@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 import Initialpage from './common/initial';
 import Driverini from './driver/driver_log_sig';
-import Riderini from './service_partner/rider_log_sig';
+import Servini from './service_partner/serviceman_log_sig';
 import Driver from './driver/drivercommand';
 import Rider from './service_partner/ridercommand';
-import Rider_login from './service_partner/service_login';
+import Service_login from './service_partner/service_login';
 import Service_Signup from './service_partner/new_service';
 import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
@@ -37,12 +37,12 @@ const App= ()=> {
      <Route path="/driverini" exact>
       <Driverini />
      </Route>
-     <Route path="/riderini" exact>
-      <Riderini />
+     <Route path="/servini" exact>
+      <Servini />
      </Route>
       
-    <Route path="/rider/login" exact>
-      <Rider_login />
+    <Route path="/serviceman/login" exact>
+      <Service_login />
     </Route>
     <Route path="/serviceman/signup" exact>
       <Service_Signup />

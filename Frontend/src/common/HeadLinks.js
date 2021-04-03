@@ -5,10 +5,10 @@ import './HeadLinks.css';
 const HeadLinks = props => {
   return<div className="head-links-div"> <ul className="head-links">
     <li>
-    <Link to={`/riderini`}>CUSTOMER</Link>
+    <Link to={`/driverini`}>CUSTOMER</Link>
     </li>
     <li>
-    <Link to={`/driverini`}>SERVICEMAN</Link>
+    <Link to={`/servini`}>SERVICEMAN</Link>
     </li>
   
   </ul>

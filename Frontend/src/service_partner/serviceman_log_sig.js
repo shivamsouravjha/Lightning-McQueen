@@ -10,8 +10,8 @@ const  Rider_log_sig = ()=> {
     <h1 className="pageheader"> DEFINE YOURSELF</h1>
    
    <center> <ul className="header">
-      <li> <Link to={`/rider/login`}> <button className="admin_div" >Login</button></Link></li>
-      <li> <Link to={`/rider/signup`}> <button className="admin_div" >Signup</button></Link></li>
+      <li> <Link to={`/serviceman/login`}> <button className="admin_div" >Login</button></Link></li>
+      <li> <Link to={`/serviceman/signup`}> <button className="admin_div" >Signup</button></Link></li>
     </ul></center>
     <div className="content">
        
