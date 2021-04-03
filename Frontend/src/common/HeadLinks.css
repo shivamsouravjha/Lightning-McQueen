@@ -9,7 +9,11 @@
     justify-content: center;
     align-items: center;
   }
-  
+.head-links-div{
+  width: 50%;
+  height: 200px;
+
+}
   
   .head-links li {
     margin: 1.5rem;
@@ -39,10 +43,10 @@
   
   .head-links button {
     cursor: pointer;
-    border: 1px solid #292929;
+    border: 1% solid #292929;
     color: #292929;
     background: transparent;
-    padding: 0.5rem;
+    padding: 0.5%;
     font: inherit;
   }
   

@@ -16,7 +16,7 @@ const verify  = async (req,res,next)=>{
 
     console.log("ftjxg");
 
-    const {skill,location_of_work,education,emergency_name,phone,emergency_relation,emergency_email,experience,rate}= req.body;
+    const {skill,location_of_work,education,emergency_name,phone,emergency_relation,emergency_email,experience,rate,aadhar_number}= req.body;
 
    // console.log(typeof(name));
    // console.log(typeof(email));
@@ -30,11 +30,9 @@ const verify  = async (req,res,next)=>{
     ///console.log(typeof(zipcode));
     console.log("serviceman_image");
 
-    const  aadhar_image = req.files.aadhar[0].path;
-    const serviceman_image = req.files.profile_pic[0].path;
-    console.log(serviceman_image);
 
-      let New_service_partner_DB = new Details_Schema({service_id,location_of_work,education,emergency_name,phone,emergency_relation,emergency_email,experience,rate,aadhar_image,serviceman_image,skill});
+    
+      let New_service_partner_DB = new Details_Schema({service_id,location_of_work,education,emergency_name,phone,emergency_relation,emergency_email,experience,rate,aadhar_number,skill});
      
       try {
           await New_service_partner_DB.save();

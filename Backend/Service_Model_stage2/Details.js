@@ -10,8 +10,7 @@ const Details_schema = new schema({
         emergency_email:{ type: String, required: true},
         experience:{ type: String},
         rate:{ type: String, required: true},
-        aadhar_image: { type: String, required: true},
-        serviceman_image: { type: String, required: true},
+        aadhar_number: { type: String, required: true,unique:true,minlength:12,maxLength:12 },
         skill:{ type: String, required: true}
 });
 

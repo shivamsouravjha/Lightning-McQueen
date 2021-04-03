@@ -11,7 +11,7 @@ import Riderini from './service_partner/rider_log_sig';
 import Driver from './driver/drivercommand';
 import Rider from './service_partner/ridercommand';
 import Rider_login from './service_partner/service_login';
-import Rider_Signup from './service_partner/new_service';
+import Service_Signup from './service_partner/new_service';
 import Driver_login from './driver/driverlogin';
 import Driver_Signup from './driver/newdriver';
 import Success from './common/sucess';
@@ -44,8 +44,8 @@ const App= ()=> {
     <Route path="/rider/login" exact>
       <Rider_login />
     </Route>
-    <Route path="/rider/signup" exact>
-      <Rider_Signup />
+    <Route path="/serviceman/signup" exact>
+      <Service_Signup />
     </Route>
     <Route path="/rider/:uid" exact>
       <Rider />

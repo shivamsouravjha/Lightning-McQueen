@@ -11,7 +11,8 @@ const HeadLinks = props => {
     <Link to={`/driverini`}>SERVICEMAN</Link>
     </li>
   
-  </ul></div> 
+  </ul>
+  </div> 
 };
 
 export default HeadLinks;
