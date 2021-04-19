@@ -1,10 +1,28 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './NavLinks.css';
+import '../bootstrap/css/bootstrap.css';
+import '../css/font-awesome.min.css';
+import '../css/animate.min.css';
+import '../css/style.css';
+
+
+
 
 const NavLinks = props => {
-  return <ul className="nav-links">
+return <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
+  <div class="container">
+
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>     
+</div> 
+  <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+   <ul class="nav navbar-nav pull-right">
     <li>
       <NavLink to="/" exact>HOME</NavLink>
     </li>
@@ -20,7 +38,8 @@ const NavLinks = props => {
     <li>
       <NavLink to="/">CONTACT US</NavLink>
     </li>
-  </ul>
+  </ul> </div> </div> </nav> 
 };
 
 export default NavLinks;
+

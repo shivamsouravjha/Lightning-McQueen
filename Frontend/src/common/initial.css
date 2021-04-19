@@ -1,12 +1,23 @@
-
+body{
+  background:#f2f2f2;
+}
 .header{
     list-style-type: none;
     }
-    .pageheader{
-        text-align: center;
-        font-size:4rem ;
-        margin: 8rem;
-        }
+    
+  
+  .headerimg{
+    
+    min-width: 100%;
+    height:auto;
+  }
+.bannerimg{
+width:80%;
+margin:auto 15rem;
+
+}
+
+
     .driver_div{
        
         -webkit-border-radius:3rem;
@@ -52,3 +63,39 @@
       transform:translateY(-0.3rem);
       transition: transform 150ms;
     }
+
+    .bottom-right {
+      width:50%;
+      position: absolute;
+      font-size:1.5rem;
+      top: 15rem;
+      left: 10rem;
+      color:white;
+    }
+
+    .bg-img {
+      position: relative;
+      width: 100%;
+  
+   /** background-image: url("");
+    background-size: 100% 100%; **/
+  }
+  .span_heading1{
+    color:rgb(224, 224, 10);
+    font-size:3rem;
+    font-weight: 600;
+  }
+  .span_heading2{
+    margin:3rem 0;
+    font-size:3.5rem;
+    font-weight: 700;
+    display:block;
+  }
+  .enquiry{
+    margin-top:2rem;
+    background:#298d78;
+    color:white;
+    padding:1rem;
+    font-size:1.5rem;
+    border-radius: 6px;
+  }

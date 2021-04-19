@@ -1,0 +1,27 @@
+.ser_icon{
+    height:10rem;
+    width:10rem;
+    
+
+}
+.ser_des{
+    padding:2.5rem;
+    display:inline-block;
+    height:18rem;
+    max-width:18rem;
+    margin:3.5rem;
+    background-color:white;
+}
+.services{
+    margin:3rem;
+    padding:3rem 0;
+}
+.service_span{
+    margin:3rem;
+    display:block;
+    font-size:3.5rem;
+    font-weight:700;
+    text-align: center;
+    color:#252525;
+
+}

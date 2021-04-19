@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@types/react-transition-group": "^4.4.1",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "http-proxy-middleware": "^1.0.6",
     "mdbreact": "^5.0.1",
     "mongoose": "^5.12.1",
@@ -38,6 +39,7 @@
       "not dead",
       "not op_mini all"
     ],
+    
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
