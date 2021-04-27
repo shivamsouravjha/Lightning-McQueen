@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
   }
+  
 .head-links-div{
   width: 50%;
   height: 200px;
@@ -17,7 +18,7 @@
   
   .head-links li {
     margin: 1.5rem;
-    font-size:1.5rem;
+    font-size:2rem;
     font-weight: bold;
   }
   
@@ -60,28 +61,29 @@
     color: rgb(26, 23, 23);
   }
   
+ 
   @media (min-width: 768px) {
-    .head-links {
+    .nav-links {
       flex-direction: row;
     }
   
-    .head-links li {
+    .nav-links li {
       margin: 0 0.5rem;
     }
   
-    .head-links a {
-      color: rgb(0, 0, 0);
+    .nav-links a {
+      color: white;
       text-decoration: none;
     }
   
-    .head-links button {
-      border: 1px solid rgb(0, 0, 0);
-      color: rgb(0, 0, 0);
+    .nav-links button {
+      border: 1px solid white;
+      color: white;
       background: transparent;
     }
     
-    .head-links button:hover,
-    .head-links button:active {
+    .nav-links button:hover,
+    .nav-links button:active {
       background: #a2bad6;
       color: #292929;
     }
