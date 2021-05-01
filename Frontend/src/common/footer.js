@@ -1,80 +1,132 @@
-import React from 'react';
-
-import './footer.css';
-
-function Footer () {
-
+import React from "react";
+import "./footer.css";
+import styled from "styled-components";
+function Footer() {
   return (
-    <section className="footer">
-        <div className="footer-content">
-      <hr className="footer-seperator" />
-      <section className="contact">
-            <div className="left">
-                <p><a href="tel:+910123456789">+91 0123456789</a></p>
-                <p>Free support line!</p>
-            </div>
-            <div className="center">
-                <p><a href="mailto:someone@example.com">Send email</a></p>
-                <p>Orders Support!</p>
-
-            </div>
-            <div className="right">
-            <p>Mon - Fri / 8:00 - 18:00</p>
-            <p>Working Days/Hours!</p>
-            </div>
-      </section>
-      <section className="footer-info">
-      <section className="footer-info-left">
-          <section className="footer-info__name">
-          We are a team of designers and <br/>developers that create high quality <br/>Magento, Prestashop, Opencart.
-          </section>
-          <section className="footer-info__returns">
-            Returns Policy
-            <br />
-            Delivery
-          </section>        
-        </section>
-        <section className="footer-info-left">
-            <ul className="footer-info__name" >
-          QUICK CONTACT<br /><br />
-            <li className="footer-info__returns"><a> Returns Policy</a><br /><br /></li>
-            <li className="footer-info__returns"><a> About Us</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Our Services</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Contact Us</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Blog</a><br /><br /></li>
-
-            </ul>
-
-        </section>
-        <section className="footer-info-center">
-        <ul className="footer-info__name">
-        MY ACCOUNT<br /><br />
-            <li className="footer-info__returns"><a> Login For Public</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Login For Worker</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Register For Public</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Register For Worker</a><br /><br /></li>
-
-            </ul>
-        </section>
-        <section className="footer-info-right">
-        <ul className="footer-info__name">
-        MY ACCOUNT<br /><br />
-            <li className="footer-info__returns"><a>Mobile No. : 9769830037, 9471924659</a><br /><br /></li>
-            <li className="footer-info__returns"><a> Email : Info@Sewakar.Com</a><br /><br /></li>
-
-            </ul>
-        </section>
-      </section>
-
-      <section className="end">
-          <section className="center-end"><p>Copyright © 2021 Sewakar. All rights reserved.</p></section>
-                 
-       
-      </section>
+    <Wrapper>
+      <article className="footerContainer">
+        <div className="con" style={{ width: "25%" }}>
+          <ul>
+            <li>Working hours : Mon-Fri/8:00-18:00</li>
+            <li>
+              Free Support : <a href="tel:+910123456789">+91 0123456789</a>
+            </li>
+            <li>
+              Order Support :<a href="mailto:someone@example.com">Send email</a>
+            </li>
+            <li>Return Policy</li>
+            <li>Delivery</li>
+          </ul>
+        </div>
+        <div className="con">
+          <ul>
+            <li>Quick Contact</li>
+            <li>
+              <a> Returns Policy</a>
+            </li>
+            <li>
+              <a> About Us</a>
+            </li>
+            <li>
+              <a> Our Services</a>
+            </li>
+            <li>
+              <a> Contact Us</a>
+            </li>
+            <li>
+              <a> Blog</a>
+            </li>
+          </ul>
+        </div>
+        <div className="con">
+          <ul>
+            <li>Logins</li>
+            <li>
+              <a> Login For Public</a>
+            </li>
+            <li>
+              <a> Register For Worker</a>
+            </li>
+            <li>
+              <a> Login For Worker</a>
+            </li>
+            <li>
+              <a> Register For Public</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="con"
+          style={{ width: "25%", alignItems: "flex-start", paddingTop: "1rem" }}
+        >
+          <ul>
+            <li>My Account</li>
+            <li>
+              Mobile No: <a> 9769830037, 9471924659</a>
+            </li>
+            <li>
+              Email : <a> Info@Sewakar.Com</a>
+            </li>
+            <li
+              style={{ width: "90%", paddingLeft: "2.5rem", marginTop: "2rem" }}
+            >
+              We are Team of designers and developers that create high quality
+              Magneto , Prestashop , Opencat
+            </li>
+          </ul>
+        </div>
+      </article>
+      <div className="copyrightSection">
+        <h5> Copyright © 2021 Sewakar. All rights reserved. </h5>
       </div>
-    </section>
-  )
-
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.section`
+  .footerContainer {
+    width: 100%;
+    height: 25rem;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-evenly;
+  }
+  .con {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  li {
+    margin-top: 1rem;
+  }
+
+  .copyrightSection {
+    color: white;
+    background-color: black;
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (max-width: 1300px) {
+    .footerContainer {
+      height: 30rem;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    .footerContainer {
+      display: none;
+    }
+  }
+`;
 
 export default Footer;

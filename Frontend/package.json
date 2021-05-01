@@ -19,6 +19,7 @@
     "react-scripts": "4.0.3",
     "react-step-builder": "^2.0.8",
     "react-transition-group": "^4.4.1",
+    "styled-components": "^5.2.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -39,7 +40,6 @@
       "not dead",
       "not op_mini all"
     ],
-    
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
