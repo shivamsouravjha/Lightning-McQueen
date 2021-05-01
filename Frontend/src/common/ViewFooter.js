@@ -1,16 +1,13 @@
-import React from 'react';
+import React from "react";
 import Footer from "./footer.js";
-import './ViewFooter.css';
+import "./ViewFooter.css";
 
-function ViewFooter () {
-
+function ViewFooter() {
   return (
-    <div id="page-container">
-    
-    <div id="footer"><Footer /> </div>
-  </div>
-  )
-
+    <div id="footer">
+      <Footer />{" "}
+    </div>
+  );
 }
 
 export default ViewFooter;
