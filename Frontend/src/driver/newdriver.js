@@ -178,8 +178,11 @@ h4{
 .header{
  background-color:black;
  width:100%;
- height:4rem;
+ height:6rem;
+ display:flex;
  margin-bottom:5rem;
+ justify-content:center;
+ align-items:center
 }
 
 .inputContainer{
@@ -195,6 +198,8 @@ input{
     margin-bottom:1rem;
     padding-left:1rem;
     border:1px solid grey;
+    height:4rem;
+    font-size:16px;
 }
 button{
     font-size: 20px;
