@@ -364,14 +364,18 @@ h4{
 .header{
  background-color:black;
  width:100%;
- height:4rem;
+ height:6rem;
  margin-bottom:5rem;
+ display:flex;
+ justify-content:center;
+ align-items:center;
 }
 
 input{
     width:100%;
     margin-bottom:1rem;
     padding-left:1rem;
+    height:4rem;
 
 }
 button{

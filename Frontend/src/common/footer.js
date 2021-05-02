@@ -1,17 +1,21 @@
 import React from "react";
 import "./footer.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <Wrapper>
       <article className="footerContainer">
         <div className="con" style={{ width: "25%" }}>
-          <ul>
-            <li>Working hours : Mon-Fri/8:00-18:00</li>
-            <li>
+          <ul style={{ alignItems: "flex-start" }}>
+            <li className="specialprop">
+              Working hours : Mon - Fri / 8:00 - 18:00
+            </li>
+            <li className="specialprop">
               Free Support : <a href="tel:+910123456789">+91 0123456789</a>
             </li>
-            <li>
+            <li className="specialprop">
               Order Support :<a href="mailto:someone@example.com">Send email</a>
             </li>
             <li>Return Policy</li>
@@ -20,38 +24,54 @@ function Footer() {
         </div>
         <div className="con">
           <ul>
-            <li>Quick Contact</li>
-            <li>
-              <a> Returns Policy</a>
+            <li className="footerHeads" style={{ marginTop: "2.5rem" }}>
+              Quick Contact
             </li>
             <li>
-              <a> About Us</a>
+              <a>&#8827; Returns Policy</a>
             </li>
             <li>
-              <a> Our Services</a>
+              <a>&#8827; About Us</a>
             </li>
             <li>
-              <a> Contact Us</a>
+              <a>&#8827; Our Services</a>
             </li>
             <li>
-              <a> Blog</a>
+              <a>&#8827; Contact Us</a>
+            </li>
+            <li>
+              <a>&#8827; Blog</a>
             </li>
           </ul>
         </div>
         <div className="con">
           <ul>
-            <li>Logins</li>
-            <li>
-              <a> Login For Public</a>
+            <li className="footerHeads" style={{ marginTop: "1.5rem" }}>
+              Logins
             </li>
             <li>
-              <a> Register For Worker</a>
+              <Link className="links" to="/driver/login">
+                {" "}
+                &#8827; Login For Public
+              </Link>
             </li>
             <li>
-              <a> Login For Worker</a>
+              <Link className="links" to="/driver/signup">
+                {" "}
+                &#8827; Register For Public
+              </Link>
             </li>
             <li>
-              <a> Register For Public</a>
+              <Link className="links" to="/serviceman/login">
+                {" "}
+                &#8827; Login For Worker
+              </Link>
+            </li>
+            <li>
+              <Link className="links" to="/serviceman/signup">
+                {" "}
+                &#8827; Register For Worker
+              </Link>
             </li>
           </ul>
         </div>
@@ -60,12 +80,14 @@ function Footer() {
           style={{ width: "25%", alignItems: "flex-start", paddingTop: "1rem" }}
         >
           <ul>
-            <li>My Account</li>
-            <li>
-              Mobile No: <a> 9769830037, 9471924659</a>
+            <li className="footerHeads" style={{ marginTop: "2.5rem" }}>
+              Reach Us
             </li>
             <li>
-              Email : <a> Info@Sewakar.Com</a>
+              &#8827; Mobile No: <a> 9769830037, 9471924659</a>
+            </li>
+            <li>
+              &#8827; Email : <a> Info@Sewakar.Com</a>
             </li>
             <li
               style={{ width: "90%", paddingLeft: "2.5rem", marginTop: "2rem" }}
@@ -86,8 +108,8 @@ function Footer() {
 const Wrapper = styled.section`
   .footerContainer {
     width: 100%;
-    height: 25rem;
-    background-color: black;
+    height: 30rem;
+    background-color: #333436;
     display: flex;
     flex-direction: row;
     color: white;
@@ -107,15 +129,34 @@ const Wrapper = styled.section`
   }
   li {
     margin-top: 1rem;
+    color: #828994;
+    cursor: pointer;
   }
-
+  li > a {
+    color: #828994;
+  }
+  li > a:hover {
+    color: blue;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .footerHeads {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: white;
+  }
   .copyrightSection {
     color: white;
-    background-color: black;
+    background-color: #454545;
     display: flex;
-    height: 4rem;
+    height: 6rem;
     align-items: center;
     justify-content: center;
+  }
+  .specialprop {
+    color: white;
+    font-size: 17px;
   }
   @media only screen and (max-width: 1300px) {
     .footerContainer {
