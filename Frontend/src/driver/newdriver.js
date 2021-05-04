@@ -54,7 +54,7 @@ const Driver_Signup = () => {
     <Wrapper>
       <article className="container">
         <div className="header">
-          <h4>Registeration Form</h4>
+          <h4>Registration Form</h4>
         </div>
 
         <form
@@ -65,7 +65,7 @@ const Driver_Signup = () => {
         >
           <div className="inputContainer">
             <input
-              placeholder="Name"
+              placeholder="Email"
               type="text"
               name="name"
               className="input"
@@ -94,7 +94,7 @@ const Driver_Signup = () => {
               required
             />
             <input
-              placeholder="Driver name"
+              placeholder="NAME"
               type="password"
               name="password"
               className="input"
@@ -105,7 +105,7 @@ const Driver_Signup = () => {
           </div>
           <div className="inputContainer">
             <input
-              placeholder="Car Number"
+              placeholder="City"
               type="text"
               name="name"
               className="input"
@@ -114,7 +114,7 @@ const Driver_Signup = () => {
               required
             />
             <input
-              placeholder="Account"
+              placeholder="Security Answer"
               type="password"
               name="password"
               className="input"
@@ -123,26 +123,7 @@ const Driver_Signup = () => {
               required
             />
           </div>
-          <div className="inputContainer">
-            <input
-              placeholder="lat"
-              type="text"
-              name="name"
-              className="input"
-              value={lat}
-              onChange={(e) => set_lat(e.target.value)}
-              required
-            />
-            <input
-              placeholder="lng"
-              type="password"
-              name="password"
-              className="input"
-              value={lng}
-              onChange={(e) => set_lng(e.target.value)}
-              required
-            />
-          </div>
+
           <button type="submit">Confirm</button>
         </form>
       </article>

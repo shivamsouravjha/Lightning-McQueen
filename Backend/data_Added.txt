@@ -32,6 +32,6 @@
     "car_number":"AB12CD1234"
 }
 http://localhost:5000/api/service/signup
-http://localhost:5000/api/driver/signup
+http://localhost:5000/api/customer/signup
 http://localhost:5000/api/rider/signup
 http://localhost:5000/api/service/login
