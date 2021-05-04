@@ -85,7 +85,7 @@ const signup  = async (req,res,next)=>{
           
             }
 
-      res.status(201).json({ memer: New_service_partner_DB.toObject({ getters: true }) });
+      res.status(201).json({ driver: New_service_partner_DB.toObject({ getters: true }) });
 };
 
 

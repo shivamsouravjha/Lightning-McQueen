@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const service_router = require('./ZRoutes/service_router');
-///const driver_router = require('./ZRoutes/driver_router');
+const customer_router = require('./ZRoutes/customer_router');
 ////const booking_routers = require('./ZRoutes/booking_routers');
 const Erur = require('./Service_Model_stage2/Error');
 const cors = require('cors')
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api/service', service_router); // => /api/places...
-////app.use('/api/driver', driver_router);
+app.use('/api/customer', customer_router);
 ///pp.use('/api/booking/', booking_routers);
 
 app.use((req, res, next) => {
