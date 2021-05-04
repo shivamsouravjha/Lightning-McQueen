@@ -5,28 +5,24 @@ const Driver_Signup = () => {
   const [password, setPassword] = useState("");
   const [email, set_email] = useState("");
   const [phone, set_phone] = useState("");
-  const [driver_name, set_driver_name] = useState("");
-  const [car_number, set_car_number] = useState("");
-  const [account, set_account] = useState("");
-  const [lat, set_lat] = useState();
-  const [lng, set_lng] = useState();
+  const [city, set_city] = useState("");
+  const [sanswer, set_sanswer] = useState("");
+  const [name, set_name] = useState("");
 
   const onSubmitform = async (e) => {
     e.preventDefault();
     try {
-      const location = { lat, lng };
       const body = {
         email,
         password,
         phone,
-        driver_name,
-        car_number,
-        account,
-        location,
+        city,
+        sanswer,
+        name
       };
 
       const response = await fetch(
-        "https://taxibackendf.herokuapp.com/api/driver/signup",
+        "https://taxibackendf.herokuapp.com/api/customer/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -43,12 +39,10 @@ const Driver_Signup = () => {
     // added later
     setPassword("");
     set_phone("");
-    set_account("");
-    set_car_number("");
-    set_driver_name("");
+    set_city("");
     set_email("");
-    set_lat("");
-    set_lng("");
+    set_sanswer("");
+    set_name("");
   };
   return (
     <Wrapper>
@@ -98,8 +92,8 @@ const Driver_Signup = () => {
               type="password"
               name="password"
               className="input"
-              value={driver_name}
-              onChange={(e) => set_driver_name(e.target.value)}
+              value={name}
+              onChange={(e) => set_name(e.target.value)}
               required
             />
           </div>
@@ -109,8 +103,8 @@ const Driver_Signup = () => {
               type="text"
               name="name"
               className="input"
-              value={car_number}
-              onChange={(e) => set_car_number(e.target.value)}
+              value={city}
+              onChange={(e) => set_city(e.target.value)}
               required
             />
             <input
@@ -118,8 +112,8 @@ const Driver_Signup = () => {
               type="password"
               name="password"
               className="input"
-              value={account}
-              onChange={(e) => set_account(e.target.value)}
+              value={sanswer}
+              onChange={(e) => set_sanswer(e.target.value)}
               required
             />
           </div>

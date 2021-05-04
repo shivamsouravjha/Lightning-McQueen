@@ -11,7 +11,7 @@ const Driver_login = () => {
       const body = { email, password };
 
       const response = await fetch(
-        "https://taxibackendf.herokuapp.com/api/driver/login",
+        "https://taxibackendf.herokuapp.com/api/customer/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
