@@ -7,7 +7,7 @@ function Footer() {
   return (
     <Wrapper>
       <article className="footerContainer">
-        <div className="con" style={{ width: "25%" }}>
+        <div className="con exCon">
           <ul style={{ alignItems: "flex-start" }}>
             <li className="specialprop">
               Working hours : Mon - Fri / 8:00 - 18:00
@@ -46,7 +46,11 @@ function Footer() {
         </div>
         <div className="con">
           <ul>
-            <li className="footerHeads" style={{ marginTop: "1.5rem" }}>
+            <li
+              className="footerHeads"
+              style={{ marginTop: "1.5rem" }}
+              id="footerHd"
+            >
               Logins
             </li>
             <li>
@@ -75,12 +79,13 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div
-          className="con"
-          style={{ width: "25%", alignItems: "flex-start", paddingTop: "1rem" }}
-        >
+        <div className="con aCon">
           <ul>
-            <li className="footerHeads" style={{ marginTop: "2.5rem" }}>
+            <li
+              className="footerHeads"
+              style={{ marginTop: "2.5rem" }}
+              id="footerHd"
+            >
               Reach Us
             </li>
             <li>
@@ -89,9 +94,7 @@ function Footer() {
             <li>
               &#8827; Email : <a> Info@Sewakar.Com</a>
             </li>
-            <li
-              style={{ width: "90%", paddingLeft: "2.5rem", marginTop: "2rem" }}
-            >
+            <li className="para">
               We are Team of designers and developers that create high quality
               Magneto , Prestashop , Opencat
             </li>
@@ -121,6 +124,14 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
   }
+  .exCon {
+    width: 25%;
+  }
+  .aCon {
+    width: 25%;
+    align-items: flex-start;
+    padding-top: 1rem;
+  }
   ul {
     display: flex;
     flex-direction: column;
@@ -140,6 +151,11 @@ const Wrapper = styled.section`
     font-size: 17px;
     cursor: pointer;
   }
+  .para {
+    width: 90%;
+    padding-left: 2.5rem;
+    margin-top: 2rem;
+  }
   .footerHeads {
     font-size: 20px;
     font-weight: 500;
@@ -158,15 +174,48 @@ const Wrapper = styled.section`
     color: white;
     font-size: 17px;
   }
-  @media only screen and (max-width: 1300px) {
+  
+  @media only screen and (max-width: 1350px) {
     .footerContainer {
-      height: 30rem;
+      flex-direction: column;
+      height: 100rem;
+    }
+    .con {
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom:2px solid #6e6e6e;
+  
+    }
+    ul {
+      justify-content: centre;
+      align-items: flex-start;
+    }
+    .aCon {
+      text-align: start;
+      justify-content: flex-start;
+    }
+    #footerHd{
+      margin-left:1rem;
+    }
+    .para {
+      width: 80%;
+      margin-left: -1rem;
+      margin-top: 2rem;
     }
   }
-  @media only screen and (max-width: 950px) {
-    .footerContainer {
-      display: none;
+  @media only screen and (max-width: 1020px) {
+    .con {
+      width: 100%;
     }
+     @media only screen and (max-width:450px) {
+    .con {
+      width: 100%;
+    }
+    ul{
+      text-align-center;
+    }
+    
   }
 `;
 
