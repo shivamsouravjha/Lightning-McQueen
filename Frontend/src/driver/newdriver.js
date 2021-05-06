@@ -89,7 +89,7 @@ const Driver_Signup = () => {
             />
             <input
               placeholder="NAME"
-              type="password"
+              type="text"
               name="password"
               className="input"
               value={name}
@@ -109,7 +109,7 @@ const Driver_Signup = () => {
             />
             <input
               placeholder="Security Answer"
-              type="password"
+              type="text"
               name="password"
               className="input"
               value={sanswer}
