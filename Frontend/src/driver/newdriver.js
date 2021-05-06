@@ -90,7 +90,7 @@ const Driver_Signup = () => {
             <input
               placeholder="NAME"
               type="text"
-              name="password"
+              name="password(minlength 8)"
               className="input"
               value={name}
               onChange={(e) => set_name(e.target.value)}
