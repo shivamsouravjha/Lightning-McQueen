@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Services from "./Services.js";
-import image1 from "../images/home1-slide11.jpeg";
 import "./initial.css";
 
 const main_page = () => {
