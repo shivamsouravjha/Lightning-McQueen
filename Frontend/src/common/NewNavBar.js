@@ -16,6 +16,12 @@ const NewNavBar = () => {
         menuLinks.classList.toggle("active");
       });
   });
+  const clickHandler = () => {
+    const menu = document.querySelector("#mobile-menu");
+    const menuLinks = document.querySelector(".nav-menu");
+    menu.classList.toggle("is-active");
+    menuLinks.classList.toggle("active");
+  };
   return (
     <Wrapper>
       <div className="nav-container">
@@ -27,37 +33,45 @@ const NewNavBar = () => {
           </div>
           <ul className="nav-menu">
             <li>
-              <Link className="nav-links" to="/" exact>
+              <Link className="nav-links" to="/" onClick={clickHandler} exact>
                 Home
               </Link>
             </li>
             <li>
-              <Link className="nav-links" to="/">
+              <Link className="nav-links" to="/" onClick={clickHandler}>
                 About Us
               </Link>
             </li>
             <li>
-              <Link className="nav-links" to="/">
+              <Link className="nav-links" to="/" onClick={clickHandler}>
                 Services
               </Link>
             </li>
             <li>
-              <Link className="nav-links" to="/">
+              <Link className="nav-links" to="/" onClick={clickHandler}>
                 Blog
               </Link>
             </li>
             <li>
-              <Link className="nav-links" to="/">
+              <Link className="nav-links" to="/" onClick={clickHandler}>
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link className="nav-links nav-links-btn" to="/driver/login">
+              <Link
+                className="nav-links nav-links-btn"
+                to="/driver/login"
+                onClick={clickHandler}
+              >
                 Login
               </Link>
             </li>
             <li>
-              <Link className="nav-links nav-links-btn" to="/driver/signup">
+              <Link
+                className="nav-links nav-links-btn"
+                to="/driver/signup"
+                onClick={clickHandler}
+              >
                 Sign up
               </Link>
             </li>
@@ -142,7 +156,7 @@ const Wrapper = styled.section`
     }
     .nav-links {
       text-align: center;
-      line-height: 60px;
+      line-height: 40px;
       width: 100%;
       display: table;
     }
@@ -170,6 +184,15 @@ const Wrapper = styled.section`
     }
     #mobile-menu.is-active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+  @media only screen and (max-width: 790px) {
+    .nav-links {
+      padding-right: 2rem;
+      text-align: center;
+      line-height: 60px;
+      width: 100%;
+      display: table;
     }
   }
 `;

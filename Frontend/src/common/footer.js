@@ -24,7 +24,11 @@ function Footer() {
         </div>
         <div className="con">
           <ul>
-            <li className="footerHeads" style={{ marginTop: "2.5rem" }}>
+            <li
+              className="footerHeads"
+              style={{ marginTop: "2.5rem" }}
+              id="footerHd"
+            >
               Quick Contact
             </li>
             <li>
@@ -102,7 +106,10 @@ function Footer() {
         </div>
       </article>
       <div className="copyrightSection">
-        <h5> Copyright © 2021 Sewakar. All rights reserved. </h5>
+        <h5>
+          {" "}
+          Copyright © 2021 <strong> Sewakar </strong> . All rights reserved.{" "}
+        </h5>
       </div>
     </Wrapper>
   );
@@ -122,8 +129,8 @@ const Wrapper = styled.section`
     width: 15%;
     height: 100%;
     display: flex;
-    justify-content: center;
-  }
+    justify-content:flex-start;
+    }
   .exCon {
     width: 25%;
   }
@@ -136,7 +143,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
   }
   li {
     margin-top: 1rem;
@@ -155,6 +162,9 @@ const Wrapper = styled.section`
     width: 90%;
     padding-left: 2.5rem;
     margin-top: 2rem;
+  }
+  #footerHd{
+    margin-left:1rem;
   }
   .footerHeads {
     font-size: 20px;
