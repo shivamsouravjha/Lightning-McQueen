@@ -9,7 +9,7 @@ import {
 import Initialpage from "./common/initial";
 import Driverini from "./driver/driver_log_sig";
 import Servini from "./service_partner/serviceman_log_sig";
-import Driver from "./driver/drivercommand";
+import Driver from "./common/redirect";
 import Rider from "./service_partner/ridercommand";
 import Service_login from "./service_partner/service_login";
 import Service_Signup from "./service_partner/new_service";

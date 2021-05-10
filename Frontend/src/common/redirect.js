@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { Link, useParams } from 'react-router-dom';
 
 const RedirectSignup = () => {
+  const did = useParams().did;
+  console.log(did)
   const [data, setData] = useState({});
   const [resources, setResources] = useState("");
   const [duration, setDuration] = useState("");
@@ -19,9 +22,34 @@ const RedirectSignup = () => {
     });
   }, [resources, duration, location, startDate, skill]);
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(data); // this data  contains all values
+    try {
+
+      const response = await fetch(
+        `https://taxibackendf.herokuapp.com/api/customer/${did}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+      ///const datainjson = await response.json();
+      ///const did = datainjson.driver._id;
+        console.log(data)
+     /// window.location = `/initial`;
+    } catch (err) {
+      console.log("Error");
+    }
+
+    //added later
+    setResources("");
+    setDuration("");
+    setLocation("");
+    setStartDate("");
+    setSkill("");
+
+ // this data  contains all values
   };
 
   return (
