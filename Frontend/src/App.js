@@ -26,6 +26,7 @@ import Booking from "./service_partner/booking";
 import ViewFooter from "./common/ViewFooter";
 import MainNavigation from "./common/MainNavigation";
 import ScrollToTop from "./scroll";
+import RedirectSignup from "./common/redirect";
 const App = () => {
   return (
     <Router>
@@ -123,6 +124,11 @@ const App = () => {
           <Route path="/rider/booking/:uid/:did" exact>
             <MainNavigation />
             <Booking />
+            <ViewFooter />
+          </Route>
+          <Route path="/redirect" exact>
+            <MainNavigation />
+            <RedirectSignup />
             <ViewFooter />
           </Route>
 
