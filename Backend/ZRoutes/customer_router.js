@@ -26,5 +26,8 @@ router.post(
     check('password').isLength({ min: 8}), 
   ],customer_controller.login
 );
-
+router.post(
+  '/user/:did',                    ///sid = srviceman id
+  customer_controller.form
+);
 module.exports = router;

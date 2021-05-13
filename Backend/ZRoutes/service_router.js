@@ -36,8 +36,5 @@ router.post(
                 name: 'profile_pic', maxCount: 1}])  ,                 ///sid = srviceman id
                 service_controller_stage2.verify
 );
-router.post(
-  '/:sid',                    ///sid = srviceman id
-  service_controller_stage1.address
-);
+
 module.exports = router;

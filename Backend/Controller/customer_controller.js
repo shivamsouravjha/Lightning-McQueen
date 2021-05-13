@@ -3,6 +3,7 @@ var path = require('path');
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 const Service_Schema = require('../customer_Model/customerschema');
+const Order_Schema = require('../customer_Model/formorder');
 
 const Erur = require('../Service_Model_stage2/Error');
 
@@ -81,5 +82,25 @@ const login  = async (req,res,next)=>{
         driver: customer_existed.toObject({ getters: true })
       });
     };
+const form  = async (req,res,next)=>{
+  
+    const service_did = req.params.did;
+    const {quantity,duration,location,startDate,skill}= req.body;
+    const New_Order = new Order_Schema({quantity,duration,location,startDate,skill});
+    try {
+      New_Order= await New_Order.save();
+      } catch (err) {
+        const error = new Erur(
+          'Signing up failed, please try again later.',
+          500
+        );
+        return next(error);
+      }
+      res.json({
+            message: 'Logged in!',
+            driver: New_Order.toObject({ getters: true })
+          });
+        };
 exports.signup = signup;
 exports.login = login;
+exports.form = form;
