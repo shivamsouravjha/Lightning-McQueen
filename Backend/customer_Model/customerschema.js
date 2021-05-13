@@ -6,7 +6,7 @@ const customer = new schema({
     email: {type :String,required:true,unique:true },
     phone: {type :String,required:true,unique:true,minlength:10,maxLength:10 },
     password: {type :String,required:true,minlength:8 },
-    sanswer: {type: String,unique:true},
+    sanswer: {type: String},
 });
 
 module.exports = mongoose.model('Customer',customer);

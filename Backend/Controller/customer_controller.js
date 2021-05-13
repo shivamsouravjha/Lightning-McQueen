@@ -83,13 +83,26 @@ const login  = async (req,res,next)=>{
       });
     };
 const form  = async (req,res,next)=>{
-  
     const service_did = req.params.did;
-    const {quantity,duration,location,startDate,skill}= req.body;
-    const New_Order = new Order_Schema({quantity,duration,location,startDate,skill});
-    try {
-      New_Order= await New_Order.save();
+    const {resources,duration,location,startDate,skill}= req.body;
+    let New_Order_;
+    try{
+      existing_customer_name = await Service_Schema.findOne({_id:service_did});
+  }catch(err){
+      error = new Erur(
+          'Signing up failed, please try again later.',
+         500
+        );
+      return next(error);
+
+  }        
+  const phone = existing_customer_name['phone']
+  const name = existing_customer_name['name']
+  const New_Order = new Order_Schema({resources,duration,location,startDate,skill,phone,name});
+  try {
+      New_Order_= await New_Order.save();
       } catch (err) {
+
         const error = new Erur(
           'Signing up failed, please try again later.',
           500

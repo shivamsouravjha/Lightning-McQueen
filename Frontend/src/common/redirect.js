@@ -27,7 +27,7 @@ const RedirectSignup = () => {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/customer/user/${did}`,
+        `https://taxibackendf.herokuapp.com/api/customer/user/${did}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
