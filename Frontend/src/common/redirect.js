@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from "react-router-dom";
 
 const RedirectSignup = () => {
   const did = useParams().did;
-  console.log(did)
   const [data, setData] = useState({});
   const [resources, setResources] = useState("");
   const [duration, setDuration] = useState("");
@@ -25,7 +24,6 @@ const RedirectSignup = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-
       const response = await fetch(
         `http://localhost:5000/api/customer/user/${did}`,
         {
@@ -36,8 +34,8 @@ const RedirectSignup = () => {
       );
       ///const datainjson = await response.json();
       ///const did = datainjson.driver._id;
-        console.log(data)
-     /// window.location = `/initial`;
+      // console.log(data);
+      /// window.location = `/initial`;
     } catch (err) {
       console.log("Error");
     }
@@ -49,7 +47,7 @@ const RedirectSignup = () => {
     setStartDate("");
     setSkill("");
 
- // this data  contains all values
+    // this data  contains all values
   };
 
   return (
@@ -117,6 +115,9 @@ const RedirectSignup = () => {
                 setSkill(e.target.value);
               }}
             >
+              <option value="none" hidden>
+                Choose
+              </option>
               <option value="masonry">masonry</option>
               <option value="building materials">building_material</option>
               <option value="demolition">demolition</option>
