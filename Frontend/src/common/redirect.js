@@ -25,7 +25,7 @@ const RedirectSignup = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:5000/api/customer/user/${did}`,
+        `https://taxibackendf.herokuapp.com/api/customer/user/${did}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -65,7 +65,9 @@ const RedirectSignup = () => {
               onChange={(e) => {
                 setResources(e.target.value);
               }}
-            />
+              title="Please enter number of people"
+              required
+             />
           </div>
           <div className="inputBox">
             <label htmlFor="duration">Project Duration : (Days) </label>
@@ -77,7 +79,9 @@ const RedirectSignup = () => {
               onChange={(e) => {
                 setDuration(e.target.value);
               }}
-            />
+              title="Please enter duration  of work"
+              required
+           />
           </div>
           <div className="inputBox">
             <label htmlFor="location">Location : </label>
@@ -89,7 +93,9 @@ const RedirectSignup = () => {
               onChange={(e) => {
                 setLocation(e.target.value);
               }}
-            />
+              title="Please enter location"
+              required
+/>
           </div>
           <div className="inputBox">
             <label htmlFor="startDate">Start date (Notice Period) : </label>
@@ -101,7 +107,9 @@ const RedirectSignup = () => {
               onChange={(e) => {
                 setStartDate(e.target.value);
               }}
-            />
+              title="Please enter Date"
+              required
+ />
           </div>
           <div className="service">
             <label htmlFor="skill" className="label">
@@ -114,10 +122,12 @@ const RedirectSignup = () => {
               onChange={(e) => {
                 setSkill(e.target.value);
               }}
-            >
+                 title="Please enter the skill"
+              required >         
               <option value="none" hidden>
                 Choose
               </option>
+
               <option value="masonry">masonry</option>
               <option value="building materials">building_material</option>
               <option value="demolition">demolition</option>

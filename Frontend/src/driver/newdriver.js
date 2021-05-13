@@ -65,7 +65,8 @@ const Driver_Signup = () => {
               className="input"
               value={email}
               onChange={(e) => set_email(e.target.value)}
-              required
+              title="Please enter you email"
+ 
             />
             <input
               placeholder="Password"
@@ -74,7 +75,9 @@ const Driver_Signup = () => {
               className="input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               required
+ 
             />
           </div>
           <div className="inputContainer">
@@ -85,7 +88,9 @@ const Driver_Signup = () => {
               className="input"
               value={phone}
               onChange={(e) => set_phone(e.target.value)}
+              title="enter your valid 10 digit mobile number"
               required
+ 
             />
             <input
               placeholder="NAME"
@@ -94,7 +99,9 @@ const Driver_Signup = () => {
               className="input"
               value={name}
               onChange={(e) => set_name(e.target.value)}
+              title="Please enter your name"
               required
+ 
             />
           </div>
           <div className="inputContainer">
@@ -105,7 +112,9 @@ const Driver_Signup = () => {
               className="input"
               value={city}
               onChange={(e) => set_city(e.target.value)}
+              title="Tell your current city for us to assist you"
               required
+ 
             />
             <input
               placeholder="Security Answer"
@@ -114,7 +123,9 @@ const Driver_Signup = () => {
               className="input"
               value={sanswer}
               onChange={(e) => set_sanswer(e.target.value)}
+              title="security answer to recover account"
               required
+ 
             />
           </div>
 
