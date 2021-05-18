@@ -22,7 +22,7 @@ const Driver_Signup = () => {
       };
 
       const response = await fetch(
-        "http://localhost:5000/api/customer/signup",
+        "https://taxibackendf.herokuapp.com/api/customer/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
