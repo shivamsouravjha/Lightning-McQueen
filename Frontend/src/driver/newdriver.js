@@ -8,7 +8,7 @@ const Driver_Signup = () => {
   const [city, set_city] = useState("");
   const [sanswer, set_sanswer] = useState("");
   const [name, set_name] = useState("");
-
+  const [success, setSuccess] = useState(false);
   const onSubmitform = async (e) => {
     e.preventDefault();
     try {
@@ -18,7 +18,7 @@ const Driver_Signup = () => {
         phone,
         city,
         sanswer,
-        name
+        name,
       };
 
       const response = await fetch(
@@ -30,24 +30,25 @@ const Driver_Signup = () => {
         }
       );
       const datainjson = await response.json();
-      if (response.status == 201){
-        window.location = `/driver/login`;
-      ///
-    }else{
-      window.alert(datainjson.message);
-    }
-  }
-    catch (err) {
+      if (response.status == 201) {
+        setSuccess(true);
+        setTimeout(() => {
+          window.location = `/driver/login`;
+        }, 5000);
+      } else {
+        window.alert(datainjson.message);
+      }
+    } catch (err) {
       console.log("Error");
     }
 
     // added later
- //   setPassword("");
-  //  set_phone("");
-  //  set_city("");
-  //  set_email("");
-  //  set_sanswer("");
-  //  set_name("");
+    //   setPassword("");
+    //  set_phone("");
+    //  set_city("");
+    //  set_email("");
+    //  set_sanswer("");
+    //  set_name("");
   };
   return (
     <Wrapper>
@@ -55,87 +56,97 @@ const Driver_Signup = () => {
         <div className="header">
           <h4>Registration Form</h4>
         </div>
+        {success ? (
+          <div className="success">
+            <h2>Signup Successful !</h2>
+            <h5 color="grey">
+              Redirecting to <strong>login page</strong>
+            </h5>
+            <img
+              src="\preloader.gif"
+              alt="loader"
+              width="30px"
+              height="30px"
+            ></img>
+          </div>
+        ) : (
+          <form
+            action="/initial"
+            id="admin_form"
+            name="admin_form"
+            onSubmit={onSubmitform}
+          >
+            <div className="inputContainer">
+              <input
+                placeholder="Email"
+                type="email"
+                name="name"
+                className="input"
+                value={email}
+                onChange={(e) => set_email(e.target.value)}
+                title="Please enter you email"
+              />
+              <input
+                placeholder="Password"
+                type="password"
+                minLength="8"
+                name="password"
+                className="input"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required
+              />
+            </div>
+            <div className="inputContainer">
+              <input
+                placeholder="Phone(do not include codes e.g. +91)"
+                type="number"
+                name="name"
+                maxLength="10"
+                className="input"
+                value={phone}
+                onChange={(e) => set_phone(e.target.value)}
+                title="enter your valid 10 digit mobile number"
+                required
+              />
+              <input
+                placeholder="Name"
+                type="text"
+                name="password(minlength 8)"
+                className="input"
+                value={name}
+                onChange={(e) => set_name(e.target.value)}
+                title="Please enter your name"
+                required
+              />
+            </div>
+            <div className="inputContainer">
+              <input
+                placeholder="City"
+                type="text"
+                name="name"
+                className="input"
+                value={city}
+                onChange={(e) => set_city(e.target.value)}
+                title="Tell your current city for us to assist you"
+                required
+              />
+              <input
+                placeholder="Security Answer"
+                type="text"
+                name="password"
+                className="input"
+                value={sanswer}
+                onChange={(e) => set_sanswer(e.target.value)}
+                title="security answer to recover account"
+                required
+              />
+            </div>
 
-        <form
-          action="/initial"
-          id="admin_form"
-          name="admin_form"
-          onSubmit={onSubmitform}
-        >
-          <div className="inputContainer">
-            <input
-              placeholder="Email"
-              type="text"
-              name="name"
-              className="input"
-              value={email}
-              onChange={(e) => set_email(e.target.value)}
-              title="Please enter you email"
- 
-            />
-            <input
-              placeholder="Password"
-              type="password"
-              name="password"
-              className="input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              required
- 
-            />
-          </div>
-          <div className="inputContainer">
-            <input
-              placeholder="Phone"
-              type="text"
-              name="name"
-              className="input"
-              value={phone}
-              onChange={(e) => set_phone(e.target.value)}
-              title="enter your valid 10 digit mobile number"
-              required
- 
-            />
-            <input
-              placeholder="NAME"
-              type="text"
-              name="password(minlength 8)"
-              className="input"
-              value={name}
-              onChange={(e) => set_name(e.target.value)}
-              title="Please enter your name"
-              required
- 
-            />
-          </div>
-          <div className="inputContainer">
-            <input
-              placeholder="City"
-              type="text"
-              name="name"
-              className="input"
-              value={city}
-              onChange={(e) => set_city(e.target.value)}
-              title="Tell your current city for us to assist you"
-              required
- 
-            />
-            <input
-              placeholder="Security Answer"
-              type="text"
-              name="password"
-              className="input"
-              value={sanswer}
-              onChange={(e) => set_sanswer(e.target.value)}
-              title="security answer to recover account"
-              required
- 
-            />
-          </div>
-
-          <button type="submit">Confirm</button>
-        </form>
+            <button type="submit">Confirm</button>
+          </form>
+        )}
       </article>
     </Wrapper>
   );
@@ -192,6 +203,14 @@ input{
     height:4rem;
     font-size:16px;
 }
+.success{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 button{
     font-size: 20px;
     padding: 6px 1rem;
@@ -200,6 +219,7 @@ button{
     color: white;
     background-color: #22a6a8;
     margin:0.8rem auto;
+    margin-top:4rem;
   }
   button:hover {
     background-color: #9fd5d6;

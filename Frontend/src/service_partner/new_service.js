@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Rider_Signup = () => {
   const [step, setstep] = useState(1);
+  const [success, setSuccess] = useState(false);
   const [formdata, setFormData] = useState({
     zipcode: "",
     email: "",
@@ -77,16 +78,16 @@ const Rider_Signup = () => {
         }
       );
       ///    const datainjson = await response_address.json();
- 
-      if (response.status == 201){
-        const did = datainjson.rider._id;
 
-        window.location = `/driver/login`;
-      ///
-    }else{
-      window.alert(datainjson.message);
-    }
-      
+      if (response.status == 201) {
+        const did = datainjson.rider._id;
+        setSuccess(true);
+        setTimeout(() => {
+          window.location = `/serviceman/login`;
+        }, 5000);
+      } else {
+        window.alert(datainjson.message);
+      }
     } catch (err) {
       console.log("Error");
     }
@@ -253,81 +254,96 @@ const Rider_Signup = () => {
               <div className="header">
                 <h4>Registeration form</h4>
               </div>
-              <form
-                action="/initial"
-                id="admin_form"
-                name="admin_form"
-                onSubmit={onSubmitform}
-              >
-                <div className="inputContainer">
-                  <input
-                    type="text"
-                    name="village"
-                    className="village"
-                    value={formdata.village}
-                    onChange={(e) => {
-                      console.log(formdata.village);
-                      setFormData({ ...formdata, village: e.target.value });
-                    }}
-                    placeholder="Enter the village"
-                    required
-                  />
-                  <input
-                    type="string"
-                    name="post"
-                    className="Emails"
-                    value={formdata.post}
-                    onChange={(e) => {
-                      console.log(formdata.post);
-                      setFormData({ ...formdata, post: e.target.value });
-                    }}
-                    placeholder="Enter the post"
-                    required
-                  />
+              {success ? (
+                <div className="success">
+                  <h2>Signup Successful !</h2>
+                  <h5 color="grey">
+                    Redirecting to <strong>login page</strong>
+                  </h5>
+                  <img
+                    src="\preloader.gif"
+                    alt="loader"
+                    width="30px"
+                    height="30px"
+                  ></img>
                 </div>
-                <div className="inputContainer">
-                  <input
-                    type="string"
-                    name="ps"
-                    className="Emails"
-                    value={formdata.ps}
-                    onChange={(e) => {
-                      console.log(formdata.ps);
-                      setFormData({ ...formdata, ps: e.target.value });
-                    }}
-                    placeholder="Enter the PS"
-                    required
-                  />
-                  <input
-                    placeholder="Enter the block"
-                    type="string"
-                    name="block"
-                    className="Emails"
-                    value={formdata.block}
-                    onChange={(e) => {
-                      console.log(formdata.block);
-                      setFormData({ ...formdata, block: e.target.value });
-                    }}
-                    required
-                  />
-                </div>
-                <div className="inputContainer">
-                  <input
-                    placeholder="Enter the PinCode"
-                    type="string"
-                    name="pnumber"
-                    className="Emails"
-                    value={formdata.pnumber}
-                    onChange={(e) => {
-                      console.log(formdata.pnumber);
-                      setFormData({ ...formdata, pnumber: e.target.value });
-                    }}
-                    required
-                  />
-                </div>
+              ) : (
+                <form
+                  action="/initial"
+                  id="admin_form"
+                  name="admin_form"
+                  onSubmit={onSubmitform}
+                >
+                  <div className="inputContainer">
+                    <input
+                      type="text"
+                      name="village"
+                      className="village"
+                      value={formdata.village}
+                      onChange={(e) => {
+                        console.log(formdata.village);
+                        setFormData({ ...formdata, village: e.target.value });
+                      }}
+                      placeholder="Enter the village"
+                      required
+                    />
+                    <input
+                      type="string"
+                      name="post"
+                      className="Emails"
+                      value={formdata.post}
+                      onChange={(e) => {
+                        console.log(formdata.post);
+                        setFormData({ ...formdata, post: e.target.value });
+                      }}
+                      placeholder="Enter the post"
+                      required
+                    />
+                  </div>
+                  <div className="inputContainer">
+                    <input
+                      type="string"
+                      name="ps"
+                      className="Emails"
+                      value={formdata.ps}
+                      onChange={(e) => {
+                        console.log(formdata.ps);
+                        setFormData({ ...formdata, ps: e.target.value });
+                      }}
+                      placeholder="Enter the PS"
+                      required
+                    />
+                    <input
+                      placeholder="Enter the block"
+                      type="string"
+                      name="block"
+                      className="Emails"
+                      value={formdata.block}
+                      onChange={(e) => {
+                        console.log(formdata.block);
+                        setFormData({ ...formdata, block: e.target.value });
+                      }}
+                      required
+                    />
+                  </div>
+                  <div className="inputContainer">
+                    <input
+                      placeholder="Enter the PinCode"
+                      type="string"
+                      name="pnumber"
+                      className="Emails"
+                      value={formdata.pnumber}
+                      onChange={(e) => {
+                        console.log(formdata.pnumber);
+                        setFormData({ ...formdata, pnumber: e.target.value });
+                      }}
+                      required
+                    />
+                  </div>
 
-                <button type="submit">Submit</button>
-              </form>
+                  <button type="submit">Submit</button>
+                </form>
+              )}
             </article>
           </Wrapper>
         );
@@ -368,7 +384,14 @@ h4{
     align-items:center;
     margin-bottom:1rem;
 }
-
+.success{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 .header{
  background-color:black;
  width:100%;
