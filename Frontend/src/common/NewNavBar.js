@@ -26,56 +26,59 @@ const NewNavBar = () => {
     <Wrapper>
       <div className="nav-container">
         <nav className="navbar">
+          <img src="./sewakar_logo2.png" className="navImg"></img>
+          <div className="navBox">
+            <ul className="nav-menu">
+              <li>
+                <Link className="nav-links" to="/" onClick={clickHandler} exact>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-links" to="/" onClick={clickHandler}>
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-links" to="/" onClick={clickHandler}>
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-links" to="/" onClick={clickHandler}>
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-links" to="/" onClick={clickHandler}>
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="nav-links nav-links-btn"
+                  to="/driver/login"
+                  onClick={clickHandler}
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="nav-links nav-links-btn"
+                  to="/driver/signup"
+                  onClick={clickHandler}
+                >
+                  Sign up
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div className="menu-toggle" id="mobile-menu">
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
-          <ul className="nav-menu">
-            <li>
-              <Link className="nav-links" to="/" onClick={clickHandler} exact>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-links" to="/" onClick={clickHandler}>
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-links" to="/" onClick={clickHandler}>
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-links" to="/" onClick={clickHandler}>
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-links" to="/" onClick={clickHandler}>
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="nav-links nav-links-btn"
-                to="/driver/login"
-                onClick={clickHandler}
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="nav-links nav-links-btn"
-                to="/driver/signup"
-                onClick={clickHandler}
-              >
-                Sign up
-              </Link>
-            </li>
-          </ul>
         </nav>
       </div>
     </Wrapper>
@@ -97,22 +100,36 @@ const Wrapper = styled.section`
     z-index: 100;
   }
   .navbar {
-    display: grid;
+    display: flex;
     align-items: center;
+    justify-content: flex-start;
     height: 80px;
     width: 100%;
     max-width: 1720px;
     margin: 0 auto;
     z-index: 100;
+    padding-left: 12rem;
+    padding-right: 8rem;
+  }
+  .navImg {
+    width: 70px;
+    height: 70px;
   }
   .nav-menu {
-    display: grid;
-    grid-template-columns: repeat(7, auto);
-    text-align: center;
-    width: 70%;
-    justify-self: end;
-    z-index: 100;
-    margin-right: 8rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
+  }
+  .nav-menu > li {
+    margin-left: 4rem;
+  }
+  .navBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .nav-links {
     color: white;
@@ -193,6 +210,14 @@ const Wrapper = styled.section`
       line-height: 60px;
       width: 100%;
       display: table;
+    }
+    .navbar {
+      padding-left: 3rem;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .navbar {
+      padding-left: 1rem;
     }
   }
 `;
