@@ -106,9 +106,10 @@ function Footer() {
         </div>
       </article>
       <div className="copyrightSection">
+        <img src="./sewakar_logo2.png" width="40px" height="40px"></img>
         <h5>
-          {" "}
-          Copyright © 2021 <strong> Sewakar </strong> . All rights reserved.{" "}
+          &nbsp; &nbsp; &nbsp; Copyright © 2021 <strong> Sewakar </strong> . All
+          rights reserved.{" "}
         </h5>
       </div>
     </Wrapper>

@@ -201,31 +201,6 @@ const Rider_Signup = () => {
                   />
                 </div>
                 <div className="inputContainer">
-                  <input
-                    type="text"
-                    name="aadhar"
-                    className="input"
-                    value={formdata.aadhar}
-                    onChange={(e) => {
-                      setFormData({ ...formdata, aadhar: e.target.value });
-                    }}
-                    placeholder="Aadhar"
-                    maxlength="12"
-                    minlength="12"
-                    title="Enter a Aadhar"
-                    required
-                  />
-                  <input
-                    type="date"
-                    name="DOB"
-                    className="input"
-                    value={formdata.dob}
-                    onChange={(e) => {
-                      setFormData({ ...formdata, dob: e.target.value });
-                    }}
-                    required
-                    style={{ width: "15rem" }}
-                  />
                   <select
                     name="Sex"
                     id="Sex"
@@ -240,6 +215,17 @@ const Rider_Signup = () => {
                       <option>Female</option>
                     </optgroup>
                   </select>
+                  <input
+                    type="date"
+                    name="DOB"
+                    className="input"
+                    value={formdata.dob}
+                    onChange={(e) => {
+                      setFormData({ ...formdata, dob: e.target.value });
+                    }}
+                    required
+                    style={{ width: "15rem" }}
+                  />
                 </div>
                 <button onClick={() => setstep(step + 1)}>Submit</button>
               </form>
@@ -339,6 +325,20 @@ const Rider_Signup = () => {
                       }}
                       required
                     />
+                    <input
+                      type="text"
+                      name="aadhar"
+                      className="input"
+                      value={formdata.aadhar}
+                      onChange={(e) => {
+                        setFormData({ ...formdata, aadhar: e.target.value });
+                      }}
+                      placeholder="Aadhar"
+                      maxlength="12"
+                      minlength="12"
+                      title="Enter a Aadhar"
+                      required
+                    />
                   </div>
 
                   <button type="submit">Submit</button>
@@ -417,6 +417,7 @@ button{
     color: white;
     background-color: #22a6a8;
     margin:0.8rem auto;
+    margin-top:3rem;
   }
   button:hover {
     background-color: #9fd5d6;
