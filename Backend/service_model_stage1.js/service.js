@@ -12,6 +12,8 @@ const service = new schema({
     zipcode: {type :String,required:true ,minlength:6,maxLength:6},
     email: {type :String,required:true,unique:true }
 
+},{
+    versionKey: false // You should be aware of the outcome after set to false
 });
 
 module.exports = mongoose.model('Service',service);

@@ -22,7 +22,7 @@ const Driver_Signup = () => {
       };
 
       const response = await fetch(
-        "https://taxibackendf.herokuapp.com/api/customer/signup",
+        "http://localhost:5000/api/customer/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -30,19 +30,24 @@ const Driver_Signup = () => {
         }
       );
       const datainjson = await response.json();
-
-      window.location = `/driver/login`;
-    } catch (err) {
+      if (response.status == 201){
+        window.location = `/driver/login`;
+      ///
+    }else{
+      window.alert(datainjson.message);
+    }
+  }
+    catch (err) {
       console.log("Error");
     }
 
     // added later
-    setPassword("");
-    set_phone("");
-    set_city("");
-    set_email("");
-    set_sanswer("");
-    set_name("");
+ //   setPassword("");
+  //  set_phone("");
+  //  set_city("");
+  //  set_email("");
+  //  set_sanswer("");
+  //  set_name("");
   };
   return (
     <Wrapper>

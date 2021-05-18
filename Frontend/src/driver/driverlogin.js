@@ -19,9 +19,16 @@ const Driver_login = () => {
         }
       );
       const datainjson = await response.json();
-      const did = datainjson.driver._id;
+      if (response.status == 201){
+        const did = datainjson.driver._id;
 
-      window.location = `/driver/${did}`;
+        window.location = `/driver/${did}`;
+      ///
+    }else{
+      window.alert(datainjson.message);
+    }
+      
+      
     } catch (err) {
       console.log("Error");
     }

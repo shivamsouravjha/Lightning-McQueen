@@ -8,6 +8,8 @@ const order = new schema({
     name: {type :String,required:true},
     phone: {type :String,required:true},
     skill: {type :String,required:true}
+},{
+    versionKey: false // You should be aware of the outcome after set to false
 });
 
 module.exports = mongoose.model('Order',order);

@@ -15,6 +15,7 @@ const signup  = async (req,res,next)=>{
         );
     }
     const {name,email,phone,password,city,sanswer}= req.body;
+    let answer =  sanswer
     let existing_customer_email; 
     let existing_customer_phone; 
  
@@ -42,19 +43,19 @@ const signup  = async (req,res,next)=>{
         );
         return next(error);
       } 
-    const New_customer = new Service_Schema({name,email,phone,password,city,sanswer});
-    console.log(New_customer)
+    const New_customer = new Service_Schema({name,email,phone,password,city,answer});
+    console.log(sanswer)
+
    let created_customer;
     try {
-      created_customer= await New_customer.save();
-      } catch (err) {
+      created_customer = await New_customer.save();
+      }catch (err) {
         const error = new Erur(
           'Signing up failed, please try again later.',
           500
         );
         return next(error);
       }
- 
       res.status(201).json({ customer: created_customer.toObject({ getters: true }) });
 };
 const login  = async (req,res,next)=>{
@@ -77,7 +78,7 @@ const login  = async (req,res,next)=>{
     );
     return next(error);
   }
-  res.json({
+  res.status(201).json({
         message: 'Logged in!',
         driver: customer_existed.toObject({ getters: true })
       });

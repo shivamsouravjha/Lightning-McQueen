@@ -11,6 +11,8 @@ const address_schema = new schema({
   ps: { type: String, required: true },
   block: { type: String, required: true },
   pnumber: { type: String, required: true },
+},{
+  versionKey: false // You should be aware of the outcome after set to false
 });
 
 module.exports = mongoose.model("Address", address_schema);

@@ -12,6 +12,8 @@ const Details_schema = new schema({
         rate:{ type: String, required: true},
         aadhar_number: { type: String, required: true,unique:true,minlength:12,maxLength:12 },
         skill:{ type: String, required: true}
-});
+},{
+        versionKey: false // You should be aware of the outcome after set to false
+    });
 
 module.exports = mongoose.model('Details',Details_schema);
