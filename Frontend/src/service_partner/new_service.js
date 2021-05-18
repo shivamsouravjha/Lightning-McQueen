@@ -77,8 +77,16 @@ const Rider_Signup = () => {
         }
       );
       ///    const datainjson = await response_address.json();
+ 
+      if (response.status == 201){
+        const did = datainjson.rider._id;
 
-      window.location = `/driver/login`;
+        window.location = `/driver/login`;
+      ///
+    }else{
+      window.alert(datainjson.message);
+    }
+      
     } catch (err) {
       console.log("Error");
     }

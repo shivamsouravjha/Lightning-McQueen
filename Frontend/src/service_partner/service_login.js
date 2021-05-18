@@ -19,9 +19,16 @@ const Rider_login = () => {
         }
       );
       const datainjson = await response.json();
-      const did = datainjson.rider._id;
-      console.log(did);
-      window.location = `/rider/${did}`;
+      
+      if (response.status == 201){
+        const did = datainjson.rider._id;
+
+        window.location = `/rider/${did}`;
+      ///
+    }else{
+      window.alert(datainjson.message);
+    }
+      
     } catch (err) {
       console.log("Error");
     }
