@@ -124,22 +124,42 @@ const RedirectSignup = () => {
               }}
                  title="Please enter the skill"
               required >         
-              <option value="none" hidden>
-                Choose
-              </option>
-
-              <option value="masonry">masonry</option>
-              <option value="building materials">building_material</option>
-              <option value="demolition">demolition</option>
-              <option value="wallcovering">wallcovering</option>
-              <option value="survey">survey</option>
-              <option value="rennovation">rennovation</option>
-              <option value="hvac">hvac</option>
-              <option value="framing">framing</option>
-              <option value="highway">highway</option>
-              <option value="plumbing">plumbing</option>
-              <option value="p_tools">p_tools</option>
-              <option value="roofing">roofing</option>
+              
+<option>Sector</option>
+<option value="agriculture">Agriculture&nbsp;</option>
+<option value="business-services">Business Services&nbsp;</option>
+<option value="computer">Computer&nbsp;</option>
+<option value="construction">Construction&nbsp;</option>
+<option value="defence">Defence&nbsp;</option>
+<option value="education">Education&nbsp;</option>
+<option value="electricity,-gas-and-water">Electricity, Gas And Water&nbsp;</option>
+<option value="electronics">Electronics&nbsp;</option>
+<option value="finance">Finance&nbsp;</option>
+<option value="fishing">Fishing&nbsp;</option>
+<option value="food-manufacturing">Food Manufacturing&nbsp;</option>
+<option value="furniture">Furniture&nbsp;</option>
+<option value="health">Health&nbsp;</option>
+<option value="insurance">Insurance&nbsp;</option>
+<option value="leather-products">Leather Products&nbsp;</option>
+<option value="machinery-and-equipments">Machinery And Equipments&nbsp;</option>
+<option value="manufacturing">Manufacturing&nbsp;</option>
+<option value="metals-and-chemicals">Metals And Chemicals&nbsp;</option>
+<option value="mining-and-quarrying">Mining And Quarrying&nbsp;</option>
+<option value="others">Others&nbsp;</option>
+<option value="paper-and-printing">Paper And Printing&nbsp;</option>
+<option value="personal-and-social-services">Personal And Social Services&nbsp;</option>
+<option value="real-estate">Real Estate&nbsp;</option>
+<option value="recreation">Recreation&nbsp;</option>
+<option value="recycling">Recycling&nbsp;</option>
+<option value="research-and-development">Research And Development&nbsp;</option>
+<option value="sewage">Sewage&nbsp;</option>
+<option value="telecommunication">Telecommunication&nbsp;</option>
+<option value="textiles">Textiles&nbsp;</option>
+<option value="tobacco">Tobacco&nbsp;</option>
+<option value="trading">Trading&nbsp;</option>
+<option value="transport-and-storage">Transport And Storage&nbsp;</option>
+<option value="wholesale-trading">Wholesale Trading&nbsp;</option>
+<option value="wood-products">Wood Products&nbsp;</option>
             </select>
           </div>
           <button type="submit">Submit</button>

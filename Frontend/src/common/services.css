@@ -42,6 +42,27 @@
   color: #252525;
   margin-top: 7rem;
 }
+.loginBtnBox {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.loginBtnServices {
+  font-size: 20px;
+  padding: 6px 1rem;
+  border: none;
+  color: white;
+  outline: none;
+  background-color: #22a6a8;
+  border-radius: 10px;
+}
+
+.loginBtnServices:hover {
+  background-color: #9fd5d6;
+  color: #22a6a8;
+}
 @media only screen and (max-width: 1200px) {
   .Order {
     flex-direction: column;
