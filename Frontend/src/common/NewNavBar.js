@@ -110,10 +110,15 @@ const Wrapper = styled.section`
     z-index: 100;
     padding-left: 12rem;
     padding-right: 8rem;
+    position: relative;
   }
   .navImg {
     width: 70px;
     height: 70px;
+    position: absolute;
+    top: 0%;
+    left: 8%;
+    z-index: 200;
   }
   .nav-menu {
     display: flex;
@@ -130,12 +135,14 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 100;
   }
   .nav-links {
     color: white;
     font-size: 20px;
     text-decoration: none;
     z-index: 100;
+    width: 100%;
   }
   .nav-links:hover {
     color: black;
@@ -166,7 +173,6 @@ const Wrapper = styled.section`
       transition: all 0.5s ease;
     }
     .nav-menu.active {
-      background: #2d917f;
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
@@ -210,6 +216,7 @@ const Wrapper = styled.section`
       line-height: 60px;
       width: 100%;
       display: table;
+      background: #298d78;
     }
     .navbar {
       padding-left: 3rem;
